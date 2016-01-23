@@ -231,6 +231,7 @@
 <li><p>開始使用app時<br>2.1 call server api時附帶token過去, server與auth認證此token是否有效<br>2.1.1 有效, 進行api操作並返回成功 or api操作fail<br>2.1.2 無效, 因token過期或尚未認證 return unauthorized讓前端判斷導到auth認證</p>
 </li>
 </ol>
+<p>需要驗證的page加上onEnter={authenticate}這個function</p>
 <p><a href="https://github.com/rackt/react-router/tree/master/examples/auth-flow" target="_blank" rel="external">react-router auth example</a></p>
 
                     

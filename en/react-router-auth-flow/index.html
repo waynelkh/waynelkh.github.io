@@ -19,7 +19,7 @@
 <meta property="og:url" content="http://waynelkh.github.io/en/react-router-auth-flow/index.html">
 <meta property="og:site_name" content="Infinite Road">
 <meta property="og:description" content="先判斷localstorge有無token1.1. 有的話拿著token發一個request去auth認證1.1.1 true的話loading結束開始使用app - 1.1.2 false導到auth頁面1.2. 沒有的話導到auth頁面 並將頁面存至localstorge已讓成功時重新返回1.2.1. 認證成功 redirect回原頁面並將token存至localstorge - 1.2.2.">
-<meta property="og:updated_time" content="2016-01-23T19:39:12.000Z">
+<meta property="og:updated_time" content="2016-01-23T20:33:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-router auth flow">
 <meta name="twitter:description" content="先判斷localstorge有無token1.1. 有的話拿著token發一個request去auth認證1.1.1 true的話loading結束開始使用app - 1.1.2 false導到auth頁面1.2. 沒有的話導到auth頁面 並將頁面存至localstorge已讓成功時重新返回1.2.1. 認證成功 redirect回原頁面並將token存至localstorge - 1.2.2.">
@@ -226,6 +226,7 @@
 <li><p>開始使用app時<br>2.1 call server api時附帶token過去, server與auth認證此token是否有效<br>2.1.1 有效, 進行api操作並返回成功 or api操作fail<br>2.1.2 無效, 因token過期或尚未認證 return unauthorized讓前端判斷導到auth認證</p>
 </li>
 </ol>
+<p>需要驗證的page加上onEnter={authenticate}這個function</p>
 <p><a href="https://github.com/rackt/react-router/tree/master/examples/auth-flow" target="_blank" rel="external">react-router auth example</a></p>
 
             
@@ -239,7 +240,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/react/">react</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/frontend/">frontend</a> <a class="tag tag--primary tag--small t-link" href="/tags/react/">react</a>
 
             </div>
         

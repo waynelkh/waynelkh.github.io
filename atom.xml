@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Be a better Programmer]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://waynelkh.github.io/"/>
-  <updated>2016-01-23T19:39:12.000Z</updated>
+  <updated>2016-01-23T20:33:01.000Z</updated>
   <id>http://waynelkh.github.io/</id>
   
   <author>
@@ -19,19 +19,22 @@
     <link href="http://waynelkh.github.io/en/react-router-auth-flow/"/>
     <id>http://waynelkh.github.io/en/react-router-auth-flow/</id>
     <published>2016-01-23T18:50:00.000Z</published>
-    <updated>2016-01-23T19:39:12.000Z</updated>
+    <updated>2016-01-23T20:33:01.000Z</updated>
     <content type="html"><![CDATA[<ol>
 <li><p>先判斷localstorge有無token<br>1.1. 有的話拿著token發一個request去auth認證<br>1.1.1 true的話loading結束開始使用app - <em><br>1.1.2 false導到auth頁面<br>1.2. 沒有的話導到auth頁面 並將頁面存至localstorge已讓成功時重新返回<br>1.2.1. 認證成功 redirect回原頁面並將token存至localstorge - </em><br>1.2.2. 認證失敗繼續認證</p>
 </li>
 <li><p>開始使用app時<br>2.1 call server api時附帶token過去, server與auth認證此token是否有效<br>2.1.1 有效, 進行api操作並返回成功 or api操作fail<br>2.1.2 無效, 因token過期或尚未認證 return unauthorized讓前端判斷導到auth認證</p>
 </li>
 </ol>
+<p>需要驗證的page加上onEnter={authenticate}這個function</p>
 <p><a href="https://github.com/rackt/react-router/tree/master/examples/auth-flow" target="_blank" rel="external">react-router auth example</a></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<ol>
 <li><p>先判斷localstorge有無token<br>1.1. 有的話拿著token發一個request去auth認證<br>1.1.1 true的話loading結束開始使用app - <em><br>1.1.2 false導到auth頁面<br>1.2. ]]>
     </summary>
+    
+      <category term="frontend" scheme="http://waynelkh.github.io/tags/frontend/"/>
     
       <category term="react" scheme="http://waynelkh.github.io/tags/react/"/>
     
@@ -93,8 +96,8 @@
     <title><![CDATA[docker]]></title>
     <link href="http://waynelkh.github.io/tw/docker/"/>
     <id>http://waynelkh.github.io/tw/docker/</id>
-    <published>2015-12-21T17:28:17.000Z</published>
-    <updated>2016-01-23T20:04:39.000Z</updated>
+    <published>2015-12-21T17:28:00.000Z</published>
+    <updated>2016-01-23T20:06:20.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Getting_Started_with_Consul_in_Docker"><a href="#Getting_Started_with_Consul_in_Docker" class="headerlink" title="Getting Started with Consul in Docker"></a>Getting Started with Consul in Docker</h2><p>Every node need<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ PUBLIC_IP=<span class="string">"<span class="variable">$(ifconfig eno16777984| grep inet | grep netmask | awk '&#123; print $2&#125;')</span>"</span></span><br></pre></td></tr></table></figure></p>
 <p>two other node need to setting<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ JOIN_IP=<span class="number">192.168</span>.<span class="number">235.101</span></span><br><span class="line"></span><br><span class="line">$ $(docker run --rm progrium/consul cmd:run <span class="variable">$PUBLIC</span>_IP -it)</span><br><span class="line">$ $(docker run --rm progrium/consul cmd:run <span class="variable">$PUBLIC</span>_IP::<span class="variable">$JOIN</span>_IP -it)</span><br></pre></td></tr></table></figure></p>
 <p>You can open the web ui on and consul ip port 8500<br>192.168.183.101:8500/ui/</p>
@@ -131,6 +134,10 @@
     </summary>
     
       <category term="all" scheme="http://waynelkh.github.io/tags/all/"/>
+    
+      <category term="docker" scheme="http://waynelkh.github.io/tags/docker/"/>
+    
+      <category term="devops" scheme="http://waynelkh.github.io/categories/devops/"/>
     
   </entry>
   
@@ -508,39 +515,6 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Vim]]></title>
-    <link href="http://waynelkh.github.io/en/Vim/"/>
-    <id>http://waynelkh.github.io/en/Vim/</id>
-    <published>2014-09-27T13:09:00.000Z</published>
-    <updated>2016-01-18T19:46:08.000Z</updated>
-    <content type="html"><![CDATA[<p>###使用方式###<br>待補…</p>
-<h4 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h4><p>Search what you select</p>
-<ol>
-<li>visual mode select word or sentance (v + hjklew.. and y for yank)</li>
-<li><code>/</code></li>
-<li><code>^r</code></li>
-<li><code>&quot;</code><br>Done </li>
-</ol>
-<p>text object: w,s,p,t<br>moions: a,i,t,f,F<br>command: d,c,y,v</p>
-<p>Combine: diw, ciw etc…</p>
-<p>查詢所有key map<br>vim原生<code>:help index</code><br>查詢pluginmap<code>:verbose map</code> <code>:verbose map!</code><br>:help map-listing<br>:help :map-verbose<br>:help :verbose<br>:help :verbose-cmd<br>:help map-which-keys</p>
-<p>###vimrc###<br>也就是vim的設定檔嘿嘿</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set undolevels=100&#10;set ruler&#10;set autoread&#10;set cursorline&#10;set number&#10;set numberwidth=3&#10;set nobomb&#10;set clipboard+=unnamed&#10;set splitright&#10;set splitbelow&#10;set scrolloff=5&#10;set showtabline=2&#10;set synmaxcol=128&#10;set viminfo=&#34;&#34;&#10;filetype plugin on&#10;syntax on&#10;set hlsearch&#10;set incsearch&#10;set ignorecase&#10;set nobackup&#10;set noswapfile&#10;set nowritebackup&#10;set expandtab&#10;set softtabstop=2&#10;set shiftwidth=2&#10;set tabstop=2&#10;set visualbell&#10;set noerrorbells&#10;set t_vb=&#10;set tm=500&#10;set encoding=utf-8&#10;scriptencoding utf-8&#10;set wildignore+=*.o,*.obj,*.pyc&#10;set wildignore+=*.png,*.jpg,*.gif,*.ico&#10;set wildignore+=*.swf,*.fla&#10;set wildignore+=*.mp3,*.mp4,*.avi,*.mkv&#10;autocmd BufWritePre * :%s/s\s\s+$//e</span><br></pre></td></tr></table></figure>
-<p>###Vundle###<br>Vundle為vim的套件管理器<br>安裝方法為<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim</span><br></pre></td></tr></table></figure></p>
-<p>然後再.vimrc中加入<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set nocompatible              &#34; be iMproved, required&#10;filetype off                  &#34; required&#10;&#34;set the runtime path to include Vundle and initialize&#10;set rtp+=~/.vim/bundle/Vundle.vim&#10;call vundle#begin()&#10;&#10;Plugin &#39;gmarik/Vundle.vim&#39;&#10;&#10;call vundle#end()            &#34; required&#10;filetype plugin indent on    &#34; required</span><br></pre></td></tr></table></figure></p>
-<p>然後再vim中可輸入<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:BundleList</span><br></pre></td></tr></table></figure></p>
-<p>查看你目前安裝的套件<br>還有更多Vundle的指令可以在~/.vim/bundle/Vundle.vim/doc/tags中找到</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>###使用方式###<br>待補…</p>
-<h4 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h4><p>Search what you select</p>
-<ol>
-<li>v]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[Web-Notes]]></title>
     <link href="http://waynelkh.github.io/en/Web-Notes/"/>
     <id>http://waynelkh.github.io/en/Web-Notes/</id>
@@ -582,6 +556,39 @@
     </summary>
     
       <category term="web" scheme="http://waynelkh.github.io/categories/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Vim]]></title>
+    <link href="http://waynelkh.github.io/en/Vim/"/>
+    <id>http://waynelkh.github.io/en/Vim/</id>
+    <published>2014-09-27T13:09:00.000Z</published>
+    <updated>2016-01-18T19:46:08.000Z</updated>
+    <content type="html"><![CDATA[<p>###使用方式###<br>待補…</p>
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h4><p>Search what you select</p>
+<ol>
+<li>visual mode select word or sentance (v + hjklew.. and y for yank)</li>
+<li><code>/</code></li>
+<li><code>^r</code></li>
+<li><code>&quot;</code><br>Done </li>
+</ol>
+<p>text object: w,s,p,t<br>moions: a,i,t,f,F<br>command: d,c,y,v</p>
+<p>Combine: diw, ciw etc…</p>
+<p>查詢所有key map<br>vim原生<code>:help index</code><br>查詢pluginmap<code>:verbose map</code> <code>:verbose map!</code><br>:help map-listing<br>:help :map-verbose<br>:help :verbose<br>:help :verbose-cmd<br>:help map-which-keys</p>
+<p>###vimrc###<br>也就是vim的設定檔嘿嘿</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set undolevels=100&#10;set ruler&#10;set autoread&#10;set cursorline&#10;set number&#10;set numberwidth=3&#10;set nobomb&#10;set clipboard+=unnamed&#10;set splitright&#10;set splitbelow&#10;set scrolloff=5&#10;set showtabline=2&#10;set synmaxcol=128&#10;set viminfo=&#34;&#34;&#10;filetype plugin on&#10;syntax on&#10;set hlsearch&#10;set incsearch&#10;set ignorecase&#10;set nobackup&#10;set noswapfile&#10;set nowritebackup&#10;set expandtab&#10;set softtabstop=2&#10;set shiftwidth=2&#10;set tabstop=2&#10;set visualbell&#10;set noerrorbells&#10;set t_vb=&#10;set tm=500&#10;set encoding=utf-8&#10;scriptencoding utf-8&#10;set wildignore+=*.o,*.obj,*.pyc&#10;set wildignore+=*.png,*.jpg,*.gif,*.ico&#10;set wildignore+=*.swf,*.fla&#10;set wildignore+=*.mp3,*.mp4,*.avi,*.mkv&#10;autocmd BufWritePre * :%s/s\s\s+$//e</span><br></pre></td></tr></table></figure>
+<p>###Vundle###<br>Vundle為vim的套件管理器<br>安裝方法為<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim</span><br></pre></td></tr></table></figure></p>
+<p>然後再.vimrc中加入<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set nocompatible              &#34; be iMproved, required&#10;filetype off                  &#34; required&#10;&#34;set the runtime path to include Vundle and initialize&#10;set rtp+=~/.vim/bundle/Vundle.vim&#10;call vundle#begin()&#10;&#10;Plugin &#39;gmarik/Vundle.vim&#39;&#10;&#10;call vundle#end()            &#34; required&#10;filetype plugin indent on    &#34; required</span><br></pre></td></tr></table></figure></p>
+<p>然後再vim中可輸入<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:BundleList</span><br></pre></td></tr></table></figure></p>
+<p>查看你目前安裝的套件<br>還有更多Vundle的指令可以在~/.vim/bundle/Vundle.vim/doc/tags中找到</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>###使用方式###<br>待補…</p>
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h4><p>Search what you select</p>
+<ol>
+<li>v]]>
+    </summary>
     
   </entry>
   
