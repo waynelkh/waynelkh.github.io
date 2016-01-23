@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Infinite Road]]></title>
+  <subtitle><![CDATA[Be a better Programmer]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://waynelkh.github.io/"/>
+  <updated>2016-01-23T19:39:12.000Z</updated>
+  <id>http://waynelkh.github.io/</id>
+  
+  <author>
+    <name><![CDATA[Wayne Lee]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[react-router auth flow]]></title>
+    <link href="http://waynelkh.github.io/en/react-router-auth-flow/"/>
+    <id>http://waynelkh.github.io/en/react-router-auth-flow/</id>
+    <published>2016-01-23T18:50:00.000Z</published>
+    <updated>2016-01-23T19:39:12.000Z</updated>
+    <content type="html"><![CDATA[<ol>
+<li><p>先判斷localstorge有無token<br>1.1. 有的話拿著token發一個request去auth認證<br>1.1.1 true的話loading結束開始使用app - <em><br>1.1.2 false導到auth頁面<br>1.2. 沒有的話導到auth頁面 並將頁面存至localstorge已讓成功時重新返回<br>1.2.1. 認證成功 redirect回原頁面並將token存至localstorge - </em><br>1.2.2. 認證失敗繼續認證</p>
+</li>
+<li><p>開始使用app時<br>2.1 call server api時附帶token過去, server與auth認證此token是否有效<br>2.1.1 有效, 進行api操作並返回成功 or api操作fail<br>2.1.2 無效, 因token過期或尚未認證 return unauthorized讓前端判斷導到auth認證</p>
+</li>
+</ol>
+<p><a href="https://github.com/rackt/react-router/tree/master/examples/auth-flow" target="_blank" rel="external">react-router auth example</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<ol>
+<li><p>先判斷localstorge有無token<br>1.1. 有的話拿著token發一個request去auth認證<br>1.1.1 true的話loading結束開始使用app - <em><br>1.1.2 false導到auth頁面<br>1.2. ]]>
+    </summary>
+    
+      <category term="react" scheme="http://waynelkh.github.io/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[npm run eslint error]]></title>
+    <link href="http://waynelkh.github.io/en/eslint-npm-run/"/>
+    <id>http://waynelkh.github.io/en/eslint-npm-run/</id>
+    <published>2016-01-18T20:12:31.000Z</published>
+    <updated>2016-01-18T20:20:47.000Z</updated>
+    <content type="html"><![CDATA[<p>When I use npm run lint script to lint my file, I always get the result below<br><img src="/en/eslint-npm-run/eslint-npm-run-error.png" alt="eslint-npm-run-error.png" title=""><br>How to solve?</p>
+<p>The reason got npm error is eslint will throw error and npm got the error.<br>So you will got npm error<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"lint"</span>: <span class="string">"eslint src; true"</span>,</span><br></pre></td></tr></table></figure></p>
+<p>And it will work!<br>But when you work with CI that will always true, so I think that is not a good way to resolve.</p>
+<p>Sometime I integrate with webpack using eslint loader like<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">preLoaders:[&#123;</span><br><span class="line">test:    /\.jsx?$/,</span><br><span class="line">include: Path.resolve(__dirname, 'src'),</span><br><span class="line">loaders: ['eslint-loader']</span><br><span class="line">&#125;],</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>When I use npm run lint script to lint my file, I always get the result below<br><img src="/en/eslint-npm-run/eslint-npm-run-error.png" a]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[double-dash]]></title>
+    <link href="http://waynelkh.github.io/tw/double-dash/"/>
+    <id>http://waynelkh.github.io/tw/double-dash/</id>
+    <published>2016-01-08T17:48:07.000Z</published>
+    <updated>2016-01-18T19:46:08.000Z</updated>
+    <content type="html"><![CDATA[<p>Today is talking about <code>--</code> in command line.<br>Someone ask <a href="http://unix.stackexchange.com/questions/11376/what-does-double-dash-mean-also-known-as-bare-double-dash" target="_blank" rel="external">what-does-double-dash-mean-also-known-as-bare-double-dash</a></p>
+<p>There is an example.<br>If you want to grep String <code>-v</code> in somefile.<br>You may type <code>grep -v somefile</code>. But, -v is a grep parameter.<br>Mush use <code>grep &#39;\-v&#39; file</code> to escape <code>-</code> symbol.<br>If you know <code>--</code> the symbol mean, you can use <code>grep -- -v file</code> to grep the <code>-v</code> string in file.<br>That mean after <code>--</code> parameters don’t be a parameter!<br>It’s useful when you write a flexiable script.<br>For example, if you use pm2 to start you node application.<br>How to you pass a parameter to script.js? Use <code>--</code> and apend the parameter as follows:<br><code>pm2 start script.js -- -d 1</code></p>
+<p>like use pm2 to excute <code>script.js -d 1</code></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Today is talking about <code>--</code> in command line.<br>Someone ask <a href="http://unix.stackexchange.com/questions/11376/what-does-d]]>
+    </summary>
+    
+      <category term="all" scheme="http://waynelkh.github.io/tags/all/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[arch]]></title>
+    <link href="http://waynelkh.github.io/tw/arch/"/>
+    <id>http://waynelkh.github.io/tw/arch/</id>
+    <published>2015-12-31T16:59:13.000Z</published>
+    <updated>2016-01-18T19:46:08.000Z</updated>
+    <content type="html"><![CDATA[<p>$ grpconv<br>Creates gshadow from group and an optionally existing gshadow.<br>Fix group doesn’t sync with gshadow</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>$ grpconv<br>Creates gshadow from group and an optionally existing gshadow.<br>Fix group doesn’t sync with gshadow</p>
+]]>
+    </summary>
+    
+      <category term="all" scheme="http://waynelkh.github.io/tags/all/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[docker]]></title>
+    <link href="http://waynelkh.github.io/tw/docker/"/>
+    <id>http://waynelkh.github.io/tw/docker/</id>
+    <published>2015-12-21T17:28:17.000Z</published>
+    <updated>2016-01-18T19:46:08.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="Getting_Started_with_Consul_in_Docker"><a href="#Getting_Started_with_Consul_in_Docker" class="headerlink" title="Getting Started with Consul in Docker"></a>Getting Started with Consul in Docker</h2><p>Every node need<br>$ PUBLIC_IP=”$(ifconfig eno16777984| grep inet | grep netmask | awk ‘{ print $2}’)”</p>
+<p>two other node need to setting<br>$ JOIN_IP=192.168.235.101</p>
+<p>$ $(docker run –rm progrium/consul cmd:run $PUBLIC_IP -it)<br>$ $(docker run –rm progrium/consul cmd:run $PUBLIC_IP::$JOIN_IP -it)</p>
+<p>You can open the web ui on and consul ip port 8500<br>192.168.183.101:8500/ui/</p>
+<p>consul dns need to change docker config</p>
+<p>Setting<br>$ sudo vim  /etc/systemd/system/docker.service<br>Append on ExecStart<br>–dns 172.17.42.1 –dns 8.8.8.8 –dns-search service.consul<br>$ sudo systemctl daemon-reload<br>$ sudo systemctl restart docker</p>
+<p>Setting host dns to be the same with docker<br>$ sudo vim /etc/systemd/resolved.conf<br>Add DNS=172.17.42.1 140.113.235.1 8.8.8.8<br>$ sudo systemctl restart systemd-resolved</p>
+<p>lookup node<br>$ dig @172.17.42.1 coreos1.node.consul<br>lookup service<br>$ dig @172.17.42.1 consul.service.consul</p>
+<p>consul node name base on <code>hostname</code><br>consul service name base on <code>image name</code></p>
+<h2 id="Using_registrator_with_consul_and_docker"><a href="#Using_registrator_with_consul_and_docker" class="headerlink" title="Using registrator with consul and docker"></a>Using registrator with consul and docker</h2><p>Start registrator<br>$ docker run -d \<br>    –name=registrator \<br>    –net=host \<br>    -h $HOSTNAME \<br>    –volume=/var/run/docker.sock:/tmp/docker.sock \<br>    gliderlabs/registrator:latest \<br>    consul://$PUBLIC_IP:8500</p>
+<p>And run some docker container<br>$ docker run -d -P redis</p>
+<p>consul service name base on image name<br>$ dig @172.17.42.1 redis.service.consul<br>And you will get the machine ip<br>;; ANSWER SECTION:<br>redis.service.consul.   0       IN      A       172.17.0.5</p>
+<p>$ dig @172.17.42.1 -t SRV redis.service.consul<br>And you will get the machine ip and mapping port <code>32769</code><br>;; ANSWER SECTION:<br>redis.service.consul.   0       IN      SRV     1 1 32769 coreos1.node.dc1.consul.<br>You can acess the redis by setting coreos1.node.dc1.consul:32769</p>
+<p>environment <code>SERVICE_NAME</code> will rewrite the default image name<br>$ docker run -d -P -e “SERVICE_NAME=db” redis<br>environment <code>SERVICE_TAGS</code> will rewrite the consul tag<br>$ docker run -d -P -e “SERVICE_NAME=db” -e “SERVICE_TAGS=primary” redis</p>
+<p>Then you can dns search you custom SERVICE_NAME<br>$ dig @172.17.42.1 db.service.consul<br>$ dig @172.17.42.1 -t SRV db.service.consul</p>
+<p>Also can search your SERVICE_TAGS<br>$ dig @172.17.42.1 -t SRV primary.db.service.consul</p>
+<p>You can custom you dockerfile to this tag<br>dockerfile<br>ENV SERVICE_NAME db</p>
+<p>$ dig db.service.consul SRV +short</p>
+<p>Health Check with consul<br><a href="https://www.consul.io/docs/agent/http/health.html" target="_blank" rel="external">health api</a><br>curl -X PUT -H “Content-Type: application/json” -d \<br>‘{<br>    “id”: “hapi”,<br>    “name”: “Heroix Api”,<br>    “notes”: “just for test”,<br>    “script”: “curl hapi.everydayhero-staging.io/api/v1”,<br>    “interval”: “15s”<br>}’ $PUBLIC_IP:8500/v1/agent/check/register</p>
+<p>Then you can check the ui service</p>
+<h2 id="Using_consul-template_to_dynamic_change_service_conf"><a href="#Using_consul-template_to_dynamic_change_service_conf" class="headerlink" title="Using consul-template to dynamic change service conf"></a>Using consul-template to dynamic change service conf</h2><p>Install<br>Download from <a href="https://releases.hashicorp.com/consul-template/" target="_blank" rel="external">release</a><br>$ wget <a href="https://releases.hashicorp.com/consul-template/0.12.0/consul-template_0.12.0_linux_amd64.zip" target="_blank" rel="external">https://releases.hashicorp.com/consul-template/0.12.0/consul-template_0.12.0_linux_amd64.zip</a> &amp;&amp; \<br> unzip consul-template_0.12.0_linux_amd64.zip &amp;&amp; \<br> rm -rf consul-template_0.12.0_linux_amd64.zip</p>
+<p><a href="https://github.com/hashicorp/consul-template" target="_blank" rel="external">Doc</a></p>
+<h2 id="Using_consul_to_discover_docker_swarm_node"><a href="#Using_consul_to_discover_docker_swarm_node" class="headerlink" title="Using consul to discover docker swarm node"></a>Using consul to discover docker swarm node</h2><p>$ docker run –rm -p 2375:2375 swarm join –advertise=<node_ip:2375> consul://<consul_addr>/<optional path="" prefix=""><br>$ docker rum –rm -p 2375:2375 swarm manage -H tcp://<swarm_ip:swarm_port> consul://<consul_addr>/<optional path="" prefix=""><br>Example.<br>$ docker run –rm -p 2375:2375 swarm join –advertise=192.168.235.101:2375 consul://192.168.235.101/nodes<br>$ docker run –rm -p 2375:2375 swarm join –advertise=192.168.235.102:2375 consul://192.168.235.101/nodes<br>$ docker run –rm -p 2375:2375 swarm join –advertise=192.168.235.103:2375 consul://192.168.235.101/nodes</optional></consul_addr></swarm_ip:swarm_port></optional></consul_addr></node_ip:2375></p>
+<p>$ docker run –rm -p 4000:2375 swarm manage consul://192.168.235.101/nodes</p>
+<p>$ docker -H tcp://192.168.235.101:4000 info</p>
+<p>$ docker run –rm swarm join –addr=192.168.235.101:2375 consul://192.168.235.101:8500/swarm<br>$ docker run -d swarm join –addr=192.168.235.102:2375 consul://192.168.235.101:8500/swarm<br>$ docker run -d swarm join –addr=192.168.235.103:2375 consul://192.168.235.101:8500/swarm</p>
+<p>$ docker run -d -p 6666:2375 swarm manage consul://192.168.235.101:8500/swarm</p>
+<p>17d30d0467ec341fe6b31590ccd33306<br>$ docker-machine create -d generic \<br>    –swarm \<br>    –swarm-master \<br>    –swarm-discovery token://17d30d0467ec341fe6b31590ccd33306 \<br>    –engine-opt dns=172.17.42.1 \<br>    –engine-opt dns=8.8.8.8 \<br>    –engine-opt dns-search=service.consul \<br>    –generic-ip-address=192.168.235.103 \<br>    –generic-ssh-user=core coreos3</p>
+<h2 id="Using_logspout_to_collect_container_logs"><a href="#Using_logspout_to_collect_container_logs" class="headerlink" title="Using logspout to collect container logs"></a>Using logspout to collect container logs</h2><p><a href="https://github.com/gliderlabs/logspout" target="_blank" rel="external">logspout</a></p>
+<h2 id="Using_cadvisor_to_monitor_running_containers"><a href="#Using_cadvisor_to_monitor_running_containers" class="headerlink" title="Using cadvisor to monitor running containers"></a>Using cadvisor to monitor running containers</h2><p><a href="https://github.com/google/cadvisor" target="_blank" rel="external">cadvisor</a><br>Analyzes resource usage and performance characteristics of running containers</p>
+<h2 id="ELK"><a href="#ELK" class="headerlink" title="ELK"></a>ELK</h2><p>$ docker run -d –name elas -p 9200:9200 -p 9300:9300 elasticsearch<br>$ docker run -d –name kiba -p 5601:5601 –link elsearch:elasticsearch kibana<br>$ docker run -it –name logs –rm -v “$PWD”:/config-dir logstash logstash -f /config-dir/logstash.conf</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Getting_Started_with_Consul_in_Docker"><a href="#Getting_Started_with_Consul_in_Docker" class="headerlink" title="Getting Started wi]]>
+    </summary>
+    
+      <category term="all" scheme="http://waynelkh.github.io/tags/all/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[archlinux-network]]></title>
+    <link href="http://waynelkh.github.io/tw/archlinux-network/"/>
+    <id>http://waynelkh.github.io/tw/archlinux-network/</id>
+    <published>2015-12-15T15:48:07.000Z</published>
+    <updated>2016-01-18T19:46:08.000Z</updated>
+    <content type="html"><![CDATA[<p>設定在vmware workstation裡面的arch網路<br>兩張網卡</p>
+<ul>
+<li>eno16777736<ul>
+<li>public ip</li>
+<li>vmware network interface bridge mode</li>
+</ul>
+</li>
+<li>eno33554984<ul>
+<li>private ip (192.168.235.100)</li>
+<li>vmware network interface NAT mode</li>
+</ul>
+</li>
+</ul>
+<p>使用netctl來設定</p>
+<p>首先要在vmware上新增兩個network interface<br>對該vm右鍵選Settings -&gt; Add -&gt; Network Adapter -&gt; Bridged =&gt; Connect power on check<br>對該vm右鍵選Settings -&gt; Add -&gt; Network Adapter -&gt; Nat =&gt; Connect power on check</p>
+<p>接下來進到vm裡頭check interface</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ ip addr</span><br><span class="line"><span class="number">1</span>: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span class="number">65536</span> qdisc noqueue state UNKNOWN group default</span><br><span class="line">    link/loopback <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> brd <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span></span><br><span class="line">    inet <span class="number">127.0</span>.<span class="number">0.1</span>/<span class="number">8</span> scope host lo</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line"><span class="number">2</span>: eno16777736: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="number">1500</span> qdisc fq_codel state UP group default qlen <span class="number">1000</span></span><br><span class="line">true...</span><br><span class="line"><span class="number">3</span>: eno33554984: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="number">1500</span> qdisc fq_codel state UP group default qlen <span class="number">1000</span></span><br><span class="line">true...</span><br></pre></td></tr></table></figure>
+<p>Interface有可能會從nat中拿到ip, interface已有可能是DOWN狀態<br>在這個範例中2: eno16777736 為bridge mode 3: eno33554984 為 NAT mode<br>看到interface之後就可以來設定netctl<br>首先使用<code>systemctl --type=service</code>查看有無其他設定network的service<br>如果有其他設定網路的服務有可能會造成衝突<br>netctl相關的設定檔都在<code>/etc/netctl</code>下<br>首先我們先複製一開始提供的設定檔到我們系統當中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[/etc/netctl]$ cp examples/ethernet-static ./ethernet-public</span><br><span class="line">[/etc/netctl]$ cp examples/ethernet-static ./ethernet-private</span><br></pre></td></tr></table></figure>
+<p>接下來使用編輯器將剛複製的檔案打開vim ethernet-public</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Description=<span class="string">'A basic static ethernet connection'</span></span><br><span class="line">Interface=eth0</span><br><span class="line">Connection=ethernet</span><br><span class="line">IP=<span class="keyword">static</span></span><br><span class="line">Address=(<span class="string">'192.168.1.23/24'</span> <span class="string">'192.168.1.87/24'</span>)</span><br><span class="line"><span class="preprocessor">#Routes=('192.168.0.0/24 via 192.168.1.2')</span></span><br><span class="line">Gateway=<span class="string">'192.168.1.1'</span></span><br><span class="line">DNS=(<span class="string">'192.168.1.1'</span>)</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">## For IPv6 autoconfiguration</span></span><br><span class="line"><span class="preprocessor">#IP6=stateless</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">## For IPv6 static address configuration</span></span><br><span class="line"><span class="preprocessor">#IP6=static</span></span><br><span class="line"><span class="preprocessor">#Address6=('1234:5678:9abc:def::1/64' '1234:3456::123/96')</span></span><br><span class="line"><span class="preprocessor">#Routes6=('abcd::1234')</span></span><br><span class="line"><span class="preprocessor">#Gateway6='1234:0:123::abcd'</span></span><br></pre></td></tr></table></figure>
+<p>以上為設定檔<br>我們只會動到ipv4部分的 Interface, Address, Gateway, DNS</p>
+<p>將ethernet-public的設定改成如下</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="setting">Description=<span class="value"><span class="string">'Public ethernet connection'</span></span></span></span><br><span class="line"><span class="setting">Interface=<span class="value">eno16777736</span></span></span><br><span class="line"><span class="setting">Connection=<span class="value">ethernet</span></span></span><br><span class="line"><span class="setting">IP=<span class="value">static</span></span></span><br><span class="line"><span class="setting">Address=<span class="value"><span class="string">'140.113.194.250/27'</span></span></span></span><br><span class="line"><span class="setting">Gateway=<span class="value"><span class="string">'140.113.194.225'</span></span></span></span><br><span class="line"><span class="setting">DNS=<span class="value">(<span class="string">'8.8.8.8'</span> <span class="string">'168.95.192.1'</span>)</span></span></span><br></pre></td></tr></table></figure>
+<p>將ethernet-private的設定改成如下</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="setting">Description=<span class="value"><span class="string">'Private ethernet connection'</span></span></span></span><br><span class="line"><span class="setting">Interface=<span class="value">eno33554984</span></span></span><br><span class="line"><span class="setting">Connection=<span class="value">ethernet</span></span></span><br><span class="line"><span class="setting">IP=<span class="value">static</span></span></span><br><span class="line"><span class="setting">Address=<span class="value"><span class="string">'192.168.235.183/24'</span></span></span></span><br><span class="line"><span class="setting">DNS=<span class="value">(<span class="string">'8.8.8.8'</span> <span class="string">'168.95.192.1'</span>)</span></span></span><br></pre></td></tr></table></figure>
+<p>設定好之後可以使用<code>netctl</code>的指令來啟用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Usage: netctl &#123;COMMAND&#125; [PROFILE]</span><br><span class="line">              [--help|--version]</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line">  list                  List available profiles</span><br><span class="line">  store                 Save <span class="built_in">which</span> profiles are active</span><br><span class="line">  restore               Load saved profiles</span><br><span class="line">  stop-all              Stops all profiles</span><br><span class="line">  start [PROFILE]       Start a profile</span><br><span class="line">  stop [PROFILE]        Stop a profile</span><br><span class="line">  restart [PROFILE]     Restart a profile</span><br><span class="line">  switch-to [PROFILE]   Switch to a profile</span><br><span class="line">  status [PROFILE]      Show runtime status of a profile</span><br><span class="line">  <span class="built_in">enable</span> [PROFILE]      Enable the systemd unit <span class="keyword">for</span> a profile</span><br><span class="line">  <span class="built_in">disable</span> [PROFILE]     Disable the systemd unit <span class="keyword">for</span> a profile</span><br><span class="line">  reenable [PROFILE]    Reenable the systemd unit <span class="keyword">for</span> a profile</span><br><span class="line">  is-enabled [PROFILE]  Check whether a profile is enabled</span><br><span class="line">  edit [PROFILE]        Edit a profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># Start the public interface configuration</span></span><br><span class="line"> [/etc/netctl]$ netctl start ethernet-public</span><br><span class="line"><span class="comment"># Enable the netctl config to start when the system boot</span></span><br><span class="line"> [/etc/netctl]$ netctl <span class="built_in">enable</span> ethernet-public</span><br><span class="line"></span><br><span class="line"> [/etc/netctl]$ netctl start ethernet-private</span><br><span class="line"> [/etc/netctl]$ netctl <span class="built_in">enable</span> ethernet-private</span><br></pre></td></tr></table></figure>
+<p>設定並開啟之後可以使用<code>ifconfig</code> or <code>ip addr</code>來查看是否設定成功<br>也可以使用<code>ping</code>來查看網路是否正常<br>最後reboot之後看設定是否可以正常啟用</p>
+<p><a href="https://wiki.archlinux.org/index.php/Netctl" target="_blank" rel="external">netctl</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>設定在vmware workstation裡面的arch網路<br>兩張網卡</p>
+<ul>
+<li>eno16777736<ul>
+<li>public ip</li>
+<li>vmware network interface bridge mode</li>
+</ul]]>
+    </summary>
+    
+      <category term="all" scheme="http://waynelkh.github.io/tags/all/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[js-unit-test]]></title>
+    <link href="http://waynelkh.github.io/tw/js-unit-test/"/>
+    <id>http://waynelkh.github.io/tw/js-unit-test/</id>
+    <published>2015-11-30T22:39:08.000Z</published>
+    <updated>2016-01-18T19:46:08.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="Mocha_2C_Chai_2C_Sinon"><a href="#Mocha_2C_Chai_2C_Sinon" class="headerlink" title="Mocha, Chai, Sinon"></a>Mocha, Chai, Sinon</h3><ul>
+<li>Behavior-driven development</li>
+<li>Test-driven development</li>
+</ul>
+<h3 id="mocha"><a href="#mocha" class="headerlink" title="mocha"></a><a href="https://mochajs.org" target="_blank" rel="external">mocha</a></h3><p>Mocha is a feature-rich JavaScript test framework running on Node.js and the browser.</p>
+<h3 id="chai"><a href="#chai" class="headerlink" title="chai"></a><a href="http://chaijs.com" target="_blank" rel="external">chai</a></h3><p>Chai is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework.</p>
+<h3 id="sinon"><a href="#sinon" class="headerlink" title="sinon"></a><a href="http://sinonjs.org" target="_blank" rel="external">sinon</a></h3><p>Standalone test spies, stubs and mocks for JavaScript.<br>No dependencies, works with any unit testing framework.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> <span class="comment">--save-dev mocha chai sinon</span></span><br><span class="line">mocha <span class="comment">--reporter nyan test-main.js</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight"><figcaption><span>package.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test: "mocha test"</span><br></pre></td></tr></table></figure>
+<p>Test react component<br><figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install --<span class="built_in">save</span>-<span class="built_in">dev</span> react-addons-test-utils</span><br><span class="line">npm i --<span class="built_in">save</span>-<span class="built_in">dev</span> react-dom</span><br><span class="line"></span><br><span class="line">npm i --<span class="built_in">save</span>-<span class="built_in">dev</span> enzyme</span><br><span class="line"><span class="built_in">or</span></span><br><span class="line">npm i --<span class="built_in">save</span>-<span class="built_in">dev</span> jsdom</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://gist.github.com/waynelkh/c286fe0c4e543128f244" target="_blank" rel="external">https://gist.github.com/waynelkh/c286fe0c4e543128f244</a></p>
+<h3 id="How_to_test_react_component"><a href="#How_to_test_react_component" class="headerlink" title="How to test react component"></a>How to test react component</h3><p>use <a href="https://facebook.github.io/react/docs/test-utils.html#shallow-rendering" target="_blank" rel="external">shallow rendering</a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;createRenderer&#125; <span class="keyword">from</span> <span class="string">'react-addons-test-utils'</span>;</span><br><span class="line"></span><br><span class="line">describe(<span class="string">'Button'</span>, () =&gt; &#123;</span><br><span class="line">  it(<span class="string">'works'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> renderer = createRenderer();</span><br><span class="line">    renderer.render(<span class="xml"><span class="tag">&lt;<span class="title">Button</span> <span class="attribute">name</span>=<span class="value">"John"</span> /&gt;</span>)</span>;</span><br><span class="line">    <span class="keyword">let</span> actualElement = renderer.getRenderOutput();</span><br><span class="line">    <span class="keyword">let</span> expectedElement = <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">Label</span> <span class="attribute">name</span>=<span class="value">"John"</span> /&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>;</span></span><br><span class="line">    expect(actualElement).toEqual(expectedElement);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// We can define a shallow rendering function</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">shallow</span>(<span class="params">component</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> renderer = createRenderer();</span><br><span class="line">  renderer.render(component);</span><br><span class="line">  <span class="keyword">return</span> renderer.getRenderOutput();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// to test a click function</span></span><br><span class="line">it(<span class="string">'clicks'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> renderer = createRenderer();</span><br><span class="line">    <span class="keyword">let</span> hasClicked = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">let</span> click = () =&gt; hasClicked = <span class="literal">true</span>;</span><br><span class="line">    renderer.render(<span class="xml"><span class="tag">&lt;<span class="title">Button</span> <span class="attribute">name</span>=<span class="value">"John"</span> <span class="attribute">onClick</span>=<span class="value">&#123;click&#125;</span> /&gt;</span>)</span>;</span><br><span class="line">    renderer.getRenderOutput().props.onClick();</span><br><span class="line">    expect(hasClicked).toBe(<span class="literal">true</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>and use <a href="https://blog.algolia.com/how-we-unit-test-react-components-using-expect-jsx/" target="_blank" rel="external">expect-jsx</a><br>to be more readable to know the error</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react/addons'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; InvitedPerson &#125; <span class="keyword">from</span> <span class="string">'components/InvitationList'</span>;</span><br><span class="line"></span><br><span class="line">describe(<span class="string">"Testing InvitedPerson using shallow rendering"</span>, () =&gt; &#123;</span><br><span class="line">  beforeEach(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> &#123; TestUtils &#125; = React.addons;</span><br><span class="line">    <span class="keyword">this</span>.person = &#123; id: <span class="number">1</span>, name: <span class="string">"Waldo"</span> &#125;;</span><br><span class="line">    <span class="keyword">this</span>.renderer = TestUtils.createRenderer();</span><br><span class="line">    <span class="keyword">this</span>.renderer.render(<span class="xml"><span class="tag">&lt;<span class="title">InvitedPerson</span> <span class="attribute">person</span>=<span class="value">&#123;this.person&#125;</span> /&gt;</span>)</span>;</span><br><span class="line">    <span class="keyword">this</span>.TestUtils = TestUtils;</span><br><span class="line">  &#125;);</span><br><span class="line">  it(<span class="string">"is a list element"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> renderedRoot = <span class="keyword">this</span>.renderer.getRenderOutput();</span><br><span class="line">    expect(renderedRoot.type).toEqual(<span class="string">"li"</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">  it(<span class="string">"has invited-person CSS class"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> renderedRoot = <span class="keyword">this</span>.renderer.getRenderOutput();</span><br><span class="line">    expect(renderedRoot.props.className).toEqual(<span class="string">"invited-person"</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">  it(<span class="string">"displays a person name"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> renderedRoot = <span class="keyword">this</span>.renderer.getRenderOutput();</span><br><span class="line">    expect(renderedRoot.props.children).toContain(<span class="xml"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">ref</span>=<span class="value">'name'</span> <span class="attribute">key</span>=<span class="value">'personName'</span>&gt;</span>&#123;this.person.name&#125;<span class="tag">&lt;/<span class="title">p</span>&gt;</span>)</span>;</span><br><span class="line">  &#125;);</span><br><span class="line">  it(<span class="string">"by default assumes the user is sure about this person"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> renderedRoot    = <span class="keyword">this</span>.renderer.getRenderOutput();</span><br><span class="line">    <span class="keyword">let</span> notSureLinkBox  = renderedRoot.props.children[<span class="number">1</span>];</span><br><span class="line">    expect(notSureLinkBox.props.children.props.children).toEqual(<span class="string">"I'm not sure about this person"</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">  it(<span class="string">"allows you to toggle confidence about this person"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> renderedRoot = <span class="keyword">this</span>.renderer.getRenderOutput();</span><br><span class="line">    <span class="keyword">let</span> notSureLink = renderedRoot.props.children[<span class="number">1</span>].props.children;</span><br><span class="line">    notSureLink.props.onClick(&#123; preventDefault: () =&gt; &#123;&#125; &#125;);</span><br><span class="line">    <span class="keyword">let</span> updatedRoot = <span class="keyword">this</span>.renderer.getRenderOutput();</span><br><span class="line">    notSureLink = updatedRoot.props.children[<span class="number">1</span>].props.children;</span><br><span class="line">    expect(notSureLink.props.children).toEqual(<span class="string">"Now I'm sure!"</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="Mocha_2C_Chai_2C_Sinon"><a href="#Mocha_2C_Chai_2C_Sinon" class="headerlink" title="Mocha, Chai, Sinon"></a>Mocha, Chai, Sinon</h3><]]>
+    </summary>
+    
+      <category term="all" scheme="http://waynelkh.github.io/tags/all/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[License]]></title>
+    <link href="http://waynelkh.github.io/en/license/"/>
+    <id>http://waynelkh.github.io/en/license/</id>
+    <published>2014-12-16T08:53:00.000Z</published>
+    <updated>2016-01-18T19:46:08.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="MIT_u3001BSD_u3001ASF_u3001GPL_u3001LGPL"><a href="#MIT_u3001BSD_u3001ASF_u3001GPL_u3001LGPL" class="headerlink" title="MIT、BSD、ASF、GPL、LGPL"></a>MIT、BSD、ASF、GPL、LGPL</h3><a id="more"></a>
+<h3 id="BSD_u958B_u6E90_u5354_u8B70"><a href="#BSD_u958B_u6E90_u5354_u8B70" class="headerlink" title="BSD開源協議"></a>BSD開源協議</h3><hr>
+<p>BSD開源協議是一個給於使用者很大自由的協議。基本上使用者可以”為所欲為”,可以自由的使用，修改源代碼，也可以將修改後的代碼作為開源或者專有軟件再發佈。</p>
+<p>但”為所欲為”的前提當你發佈使用了BSD協議的代碼，或則以BSD協議代碼為基礎做二次開發自己的產品時，需要滿足三個條件：</p>
+<p>如果再發佈的產品中包含源代碼，則在源代碼中必須帶有原來代碼中的BSD協議。<br>如果再發佈的只是二進制類庫/軟件，則需要在類庫/軟件的文檔和版權聲明中包含原來代碼中的BSD協議。<br>不可以用開源代碼的作者/機構名字和原來產品的名字做市場推廣。<br>BSD 代碼鼓勵代碼共享，但需要尊重代碼作者的著作權。BSD由於允許使用者修改和重新發佈代碼，也允許使用或在BSD代碼上開發商業軟件發佈和銷售，因此是對 商業集成很友好的協議。而很多的公司企業在選用開源產品的時候都首選BSD協議，因為可以完全控制這些第三方的代碼，在必要的時候可以修改或者二次開發。</p>
+<h3 id="MIT_uFF08MIT_uFF09"><a href="#MIT_uFF08MIT_uFF09" class="headerlink" title="MIT（MIT）"></a>MIT（MIT）</h3><hr>
+<p>MIT是和BSD一樣寬範的許可協議,作者只想保留版權,而無任何其他了限制.也就是說,你必須在你的發行版裡包含原許可協議的聲明,無論你是以二進制發佈的還是以源代碼發佈的.</p>
+<h3 id="APACHE_LICENCE_2-0"><a href="#APACHE_LICENCE_2-0" class="headerlink" title="APACHE LICENCE 2.0"></a>APACHE LICENCE 2.0</h3><hr>
+<p>Apache Licence是著名的非盈利開源組織Apache採用的協議。該協議和BSD類似，同樣鼓勵代碼共享和尊重原作者的著作權，同樣允許代碼修改，再發佈（作為開源或商業軟件）。需要滿足的條件也和BSD類似：</p>
+<p>需要給代碼的用戶一份Apache Licence<br>如果你修改了代碼，需要再被修改的文件中說明。<br>在延伸的代碼中（修改和有源代碼衍生的代碼中）需要帶有原來代碼中的協議，商標，專利聲明和其他原來作者規定需要包含的說明。<br>如果再發佈的產品中包含一個Notice文件，則在Notice文件中需要帶有Apache Licence。你可以在Notice中增加自己的許可，但不可以表現為對Apache Licence構成更改。<br>Apache Licence也是對商業應用友好的許可。使用者也可以在需要的時候修改代碼來滿足需要並作為開源或商業產品發佈/銷售。</p>
+<h3 id="GPL"><a href="#GPL" class="headerlink" title="GPL"></a>GPL</h3><hr>
+<p>我們很熟悉的Linux就是採用了GPL。GPL協議和BSD, Apache Licence等鼓勵代碼重用的許可很不一樣。GPL的出發點是代碼的開源/免費使用和引用/修改/衍生代碼的開源/免費使用，但不允許修改後和衍生的代 碼做為閉源的商業軟件發佈和銷售。這也就是為什麼我們能用免費的各種linux，包括商業公司的linux和linux上各種各樣的由個人，組織，以及商 業軟件公司開發的免費軟件了。</p>
+<p>GPL協議的主要內容是只要在一個軟件中使用(“使用”指類庫引用，修改後的代碼或者衍生代碼)GPL 協議的產品，則該軟件產品必須也採用GPL協議，既必須也是開源和免費。這就是所謂的”傳染性”。GPL協議的產品作為一個單獨的產品使用沒有任何問題， 還可以享受免費的優勢。</p>
+<p>由於GPL嚴格要求使用了GPL類庫的軟件產品必須使用GPL協議，對於使用GPL協議的開源代碼，商業軟件或者對代碼有保密要求的部門就不適合集成/採用作為類庫和二次開發的基礎。</p>
+<p>其它細節如再發佈的時候需要伴隨GPL協議等和BSD/Apache等類似。</p>
+<h3 id="LGPL_uFF08GNU_LESSER_GENERAL_PUBLIC_LICENSE_uFF09"><a href="#LGPL_uFF08GNU_LESSER_GENERAL_PUBLIC_LICENSE_uFF09" class="headerlink" title="LGPL（GNU LESSER GENERAL PUBLIC LICENSE）"></a>LGPL（GNU LESSER GENERAL PUBLIC LICENSE）</h3><hr>
+<p>LGPL是GPL的一個為主要為類庫使用設計的開源協議。和GPL要求任何使用/修改/衍生之GPL類庫的的軟件必須採用GPL協議不同。LGPL允許商 業軟件通過類庫引用(link)方式使用LGPL類庫而不需要開源商業軟件的代碼。這使得採用LGPL協議的開源代碼可以被商業軟件作為類庫引用並發布和 銷售。</p>
+<p>但是如果修改LGPL協議的代碼或者衍生，則所有修改的代碼，涉及修改部分的額外代碼和衍生的代碼都必須採用LGPL協議。因此LGPL協議的開源代碼很 適合作為第三方類庫被商業軟件引用，但不適合希望以LGPL協議代碼為基礎，通過修改和衍生的方式做二次開發的商業軟件採用。</p>
+<p>GPL/LGPL都保障原作者的知識產權，避免有人利用開源代碼複製並開發類似的產品</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="MIT_u3001BSD_u3001ASF_u3001GPL_u3001LGPL"><a href="#MIT_u3001BSD_u3001ASF_u3001GPL_u3001LGPL" class="headerlink" title="MIT、BSD、ASF、GPL、LGPL"></a>MIT、BSD、ASF、GPL、LGPL</h3>]]>
+    
+    </summary>
+    
+      <category term="other" scheme="http://waynelkh.github.io/tags/other/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Mosh]]></title>
+    <link href="http://waynelkh.github.io/en/mosh/"/>
+    <id>http://waynelkh.github.io/en/mosh/</id>
+    <published>2014-09-27T13:10:04.000Z</published>
+    <updated>2016-01-18T19:46:08.000Z</updated>
+    <content type="html"><![CDATA[<p>#<a href="https://mosh.mit.edu/" target="_blank" rel="external">Mobile Shell</a><br>If you use  Wi-Fi, cellular, and long-distance network,<br>you <em>mush</em> try mosh!!<br>Mosh is a replacement for SSH<br>Using encryption UDP</p>
+<h1 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h1><ul>
+<li>Roaming</li>
+<li>Packet loss</li>
+<li>Local echo</li>
+</ul>
+<h1 id="Drawbacks"><a href="#Drawbacks" class="headerlink" title="Drawbacks"></a>Drawbacks</h1><ul>
+<li>Prerequisites to the server</li>
+<li>One port per connection<ul>
+<li>Default choose 60000-61000 port for each connection.</li>
+</ul>
+</li>
+</ul>
+<p>So when you are mosh to a host in NAT or vm you should assign the port like<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mosh -p <span class="number">1234</span> [ip]</span><br></pre></td></tr></table></figure></p>
+<h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><p><a href="https://mosh.mit.edu/#getting" target="_blank" rel="external">Get Mosh</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>#<a href="https://mosh.mit.edu/" target="_blank" rel="external">Mobile Shell</a><br>If you use  Wi-Fi, cellular, and long-distance networ]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Web-Notes]]></title>
+    <link href="http://waynelkh.github.io/en/Web-Notes/"/>
+    <id>http://waynelkh.github.io/en/Web-Notes/</id>
+    <published>2014-09-27T13:09:00.000Z</published>
+    <updated>2016-01-18T19:46:08.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h3 id="u5FEB_u901F_u6539_u8B8A_u7DB2_u7AD9_u6B0A_u9650"><a href="#u5FEB_u901F_u6539_u8B8A_u7DB2_u7AD9_u6B0A_u9650" class="headerlink" title="快速改變網站權限"></a>快速改變網站權限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ find ./ -type d -print0 | xargs -<span class="number">0</span> chmod <span class="number">755</span> <span class="comment">#將所在目錄下所有目錄改變權限</span></span><br><span class="line">$ find ./ -type f -print0 | xargs -<span class="number">0</span> chmod <span class="number">644</span> <span class="comment">#將所在目錄下所有檔案改變權限</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="Front-end"><a href="#Front-end" class="headerlink" title="Front-end"></a>Front-end</h2><h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm uninstall</span><br><span class="line">npm search</span><br><span class="line">npm ls</span><br><span class="line">npm update</span><br></pre></td></tr></table></figure>
+<p>參數<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g [package name]	<span class="comment">#安裝全域中</span></span><br><span class="line">npm install --save [package name] <span class="comment">#安裝並加入package.json中的dependencies</span></span><br><span class="line">npm install --save-dev [package name] <span class="comment">#同上不同欄位devDependencies</span></span><br><span class="line">npm install --save-optional <span class="comment">#同上不同欄位optionalDependencies</span></span><br></pre></td></tr></table></figure></p>
+<p>將npm寫入設定中,預設會讀目錄下的<code>package.json</code>欓<br>可以使用npm init產生<code>package.json</code>欓</p>
+<h2 id="CI_and_CD"><a href="#CI_and_CD" class="headerlink" title="CI and CD"></a>CI and CD</h2><p>Continuous Integration/Continuous Delivery</p>
+<h2 id="u751F_u6210_u6E2C_u8A66json"><a href="#u751F_u6210_u6E2C_u8A66json" class="headerlink" title="生成測試json"></a>生成測試json</h2><p><a href="http://www.filltext.com/" target="_blank" rel="external">filltext</a><br>使用方法<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://filltext.com/?rows=10&amp;val=&#123;randomNumber&#125;</span><br></pre></td></tr></table></figure></p>
+<p>返回來的json會呈現<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">3</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">9</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">5</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">1</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">0</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">4</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">7</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">0</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">6</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">8</span></span>&#125;]</span><br></pre></td></tr></table></figure></p>
+<p>還有其他很多的選項可以去上面官網看</p>
+<h3 id="u53D6_u4EE3mouse_move_event"><a href="#u53D6_u4EE3mouse_move_event" class="headerlink" title="取代mouse move event"></a>取代mouse move event</h3><p>使用 requestAnimationFrame 增進performance<br><a href="http://msdn.microsoft.com/zh-tw/library/ie/hh920765%28v=vs.85%29.aspx" target="_blank" rel="external">接個連結</a></p>
+<h3 id="HTML5_script_attribe"><a href="#HTML5_script_attribe" class="headerlink" title="HTML5 script attribe"></a>HTML5 script attribe</h3><p>可以使頁面不會再載入js檔時停住<br><code>&lt;script src=&quot;demo.js&quot; &gt;&lt;/script&gt;</code><br><code>&lt;script src=&quot;demo.js&quot; async&gt;&lt;/script&gt;</code></p>
+<h3 id="Web_Project_Tools"><a href="#Web_Project_Tools" class="headerlink" title="Web Project Tools"></a>Web Project Tools</h3><ul>
+<li><a href="http://nightwatchjs.org/" target="_blank" rel="external">Nightwatch</a><ul>
+<li>Browser automated testing done easy. Write efficient and straightforward Javascript End-to-End tests in Node.js which run against a Selenium server.</li>
+</ul>
+</li>
+<li><a href="https://ci.testling.com/" target="_blank" rel="external">ci.testling</a> run your browser tests on every push</li>
+<li><a href="https://travis-ci.org/" target="_blank" rel="external">travis-ci</a></li>
+<li><a href="https://saucelabs.com/" target="_blank" rel="external">saucelabs</a> Automated testing in the cloud for CI.</li>
+<li><a href="https://circleci.com/" target="_blank" rel="external">CircleCI</a> Mobile App Testing for iOS &amp; Android</li>
+<li><a href="https://github.com/Strider-CD/strider" target="_blank" rel="external">Strider-CD</a></li>
+<li><a href="https://codeclimate.com/" target="_blank" rel="external">CodeClimate</a> Merge with Confidence.<br>Automated code review for Ruby, JS, and PHP.</li>
+<li><a href="https://david-dm.org/" target="_blank" rel="external">David</a> Watch your Node.JS dependencies</li>
+<li><a href="https://gemnasium.com/" target="_blank" rel="external">Gemnasium</a> SECURE YOUR PROJECT AND REDUCE TECHNICAL DEBT</li>
+<li><a href="https://www.modern.ie/" target="_blank" rel="external">Modern.ie</a> 看名稱也知道是測試IE相容性的</li>
+</ul>
+<h3 id="Web_server_benchmark_test"><a href="#Web_server_benchmark_test" class="headerlink" title="Web server benchmark test"></a>Web server benchmark test</h3><p>use <code>ab</code> command</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -n <span class="number">50000</span> -c <span class="number">100</span> x.arthurtoday.com/xyz.html</span><br></pre></td></tr></table></figure>
+<p>It is a apache benchmark testing tools<br><a href="http://httpd.apache.org/docs/2.2/programs/ab.html" target="_blank" rel="external">Official</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h3 id="u5FEB_u901F_u6539_u8B8A_u7DB2_u7AD9_u6B0A_u9650"><a href="#u5FEB_u901F_u6539_u8B8A_u7DB2_u7AD9_u6B0A_u9650" class="headerlink" title="快速改變網站權限"></a>快速改變網站權限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ find ./ -type d -print0 | xargs -<span class="number">0</span> chmod <span class="number">755</span> <span class="comment">#將所在目錄下所有目錄改變權限</span></span><br><span class="line">$ find ./ -type f -print0 | xargs -<span class="number">0</span> chmod <span class="number">644</span> <span class="comment">#將所在目錄下所有檔案改變權限</span></span><br></pre></td></tr></table></figure>]]>
+    
+    </summary>
+    
+      <category term="web" scheme="http://waynelkh.github.io/categories/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Vim]]></title>
+    <link href="http://waynelkh.github.io/en/Vim/"/>
+    <id>http://waynelkh.github.io/en/Vim/</id>
+    <published>2014-09-27T13:09:00.000Z</published>
+    <updated>2016-01-18T19:46:08.000Z</updated>
+    <content type="html"><![CDATA[<p>###使用方式###<br>待補…</p>
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h4><p>Search what you select</p>
+<ol>
+<li>visual mode select word or sentance (v + hjklew.. and y for yank)</li>
+<li><code>/</code></li>
+<li><code>^r</code></li>
+<li><code>&quot;</code><br>Done </li>
+</ol>
+<p>text object: w,s,p,t<br>moions: a,i,t,f,F<br>command: d,c,y,v</p>
+<p>Combine: diw, ciw etc…</p>
+<p>查詢所有key map<br>vim原生<code>:help index</code><br>查詢pluginmap<code>:verbose map</code> <code>:verbose map!</code><br>:help map-listing<br>:help :map-verbose<br>:help :verbose<br>:help :verbose-cmd<br>:help map-which-keys</p>
+<p>###vimrc###<br>也就是vim的設定檔嘿嘿</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set undolevels=100&#10;set ruler&#10;set autoread&#10;set cursorline&#10;set number&#10;set numberwidth=3&#10;set nobomb&#10;set clipboard+=unnamed&#10;set splitright&#10;set splitbelow&#10;set scrolloff=5&#10;set showtabline=2&#10;set synmaxcol=128&#10;set viminfo=&#34;&#34;&#10;filetype plugin on&#10;syntax on&#10;set hlsearch&#10;set incsearch&#10;set ignorecase&#10;set nobackup&#10;set noswapfile&#10;set nowritebackup&#10;set expandtab&#10;set softtabstop=2&#10;set shiftwidth=2&#10;set tabstop=2&#10;set visualbell&#10;set noerrorbells&#10;set t_vb=&#10;set tm=500&#10;set encoding=utf-8&#10;scriptencoding utf-8&#10;set wildignore+=*.o,*.obj,*.pyc&#10;set wildignore+=*.png,*.jpg,*.gif,*.ico&#10;set wildignore+=*.swf,*.fla&#10;set wildignore+=*.mp3,*.mp4,*.avi,*.mkv&#10;autocmd BufWritePre * :%s/s\s\s+$//e</span><br></pre></td></tr></table></figure>
+<p>###Vundle###<br>Vundle為vim的套件管理器<br>安裝方法為<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim</span><br></pre></td></tr></table></figure></p>
+<p>然後再.vimrc中加入<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set nocompatible              &#34; be iMproved, required&#10;filetype off                  &#34; required&#10;&#34;set the runtime path to include Vundle and initialize&#10;set rtp+=~/.vim/bundle/Vundle.vim&#10;call vundle#begin()&#10;&#10;Plugin &#39;gmarik/Vundle.vim&#39;&#10;&#10;call vundle#end()            &#34; required&#10;filetype plugin indent on    &#34; required</span><br></pre></td></tr></table></figure></p>
+<p>然後再vim中可輸入<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:BundleList</span><br></pre></td></tr></table></figure></p>
+<p>查看你目前安裝的套件<br>還有更多Vundle的指令可以在~/.vim/bundle/Vundle.vim/doc/tags中找到</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>###使用方式###<br>待補…</p>
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h4><p>Search what you select</p>
+<ol>
+<li>v]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Start the road]]></title>
+    <link href="http://waynelkh.github.io/en/Start-the-road/"/>
+    <id>http://waynelkh.github.io/en/Start-the-road/</id>
+    <published>2014-09-24T16:41:00.000Z</published>
+    <updated>2016-01-18T19:46:08.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="Hello"><a href="#Hello" class="headerlink" title="Hello"></a>Hello</h2><p>I want to start write some notes on this page. If I am industrious, I will write in English. But my English is not well, wish you forgive me.</p>
+<h2 id="Title"><a href="#Title" class="headerlink" title="Title"></a>Title</h2><ul>
+<li>Website related<ul>
+<li>Html5</li>
+<li>Javascript</li>
+<li>Jquery</li>
+<li>ReactJS</li>
+<li>PHP</li>
+<li>Codeigniter</li>
+</ul>
+</li>
+<li>Destop application<ul>
+<li>JavaFx</li>
+<li>C#</li>
+<li>Python</li>
+<li>Android</li>
+</ul>
+</li>
+<li>Networks related<ul>
+<li>SDN</li>
+</ul>
+</li>
+<li>System management<ul>
+<li>linux</li>
+<li>freebsd</li>
+</ul>
+</li>
+<li>IDE related<ul>
+<li>Sublime text</li>
+<li>Vim</li>
+<li>Visual studio</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><em>Wish I can work hard</em>.<br>Wayne Lee 2014/09/25</p>
+<h2 id="2015-06-08"><a href="#2015-06-08" class="headerlink" title="2015-06-08"></a>2015-06-08</h2><ul>
+<li>DevOps<ul>
+<li>Jenkins</li>
+<li>Gitlab</li>
+<li>Saltstack</li>
+<li>Ansible</li>
+<li>Docker</li>
+</ul>
+</li>
+<li>Fullstack<ul>
+<li>Node.js</li>
+<li>React Flux</li>
+<li>Redux</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Hello"><a href="#Hello" class="headerlink" title="Hello"></a>Hello</h2><p>I want to start write some notes on this page. If I am ind]]>
+    </summary>
+    
+  </entry>
+  
+</feed>
