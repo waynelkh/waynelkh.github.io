@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Infinite Road">
-    <title>Category: Web - Infinite Road</title>
+    <title>Tag: mysql - Infinite Road</title>
     <meta name="author" content="Wayne Lee">
     
     
@@ -16,7 +16,7 @@
     <meta name="description" content="Note something I had done">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Infinite Road">
-<meta property="og:url" content="http://waynelkh.github.io/categories/Web/index.html">
+<meta property="og:url" content="http://waynelkh.github.io/tags/mysql/index.html">
 <meta property="og:site_name" content="Infinite Road">
 <meta property="og:description" content="Note something I had done">
 <meta name="twitter:card" content="summary">
@@ -203,40 +203,45 @@
 <section class="postShorten-group main-content-wrap">
     
     
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/en/bower/">
-                            Bower
+                        <a class="link-unstyled" href="/en/phpMyAdmin-use-socket/">
+                            phpMyAdmin use socket
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat Oct 11 2014 02:27:42 GMT+0800">
+    <time itemprop="datePublished" content="Tue Oct 07 2014 04:55:43 GMT+0800">
 	
-		    Oct 11, 2014
+		    Oct 07, 2014
     	
     </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/Web/">Web</a>
-
-
     
 </div>
             </div>
             
             
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p>###Bower a package manager for the web###<br>前端套件管理工具<br>官方網頁<a href="http://bower.io/">Bower</a><br>會發現這個管理工具的原因主要是先看到<a href="http://yeoman.io/">Yeoman</a>一個強大的樣板產生器<br>Yeoman是由三個東西組成的yo,grunt,bower, 而今天這篇主要是來介紹bower的用法,其他兩種之後會一一介紹</p>
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>原本安裝好mysql跟phpmyadmin會出現</p>
+<p>#2002 無法登入 mysql 伺服器<br>原因是phpmyadmin預設localhost是用tcp來連結的<br>所以會造成這個錯誤，要解決的辦法有兩種<br>第一種為使用socket來連結<br>再phpMyAdmin/config.inc.php加入這一行，如果沒有就cp一份config.sample.ini.php</p>
+<figure class="highlight php"><figcaption><span>config.inc.php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$cfg</span>[<span class="string">'Servers'</span>][<span class="variable">$i</span>][<span class="string">'socket'</span>] = <span class="string">'/tmp/mysql.sock'</span>;</span><br></pre></td></tr></table></figure>
+<p>還有的設定<code>/etc/php.ini</code><br><figure class="highlight php"><figcaption><span>php.ini</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql.default_socket =<span class="string">"/tmp/mysql.sock"</span></span><br></pre></td></tr></table></figure></p>
+<p>記得<code>/tmp/mysql.sock</code>為mysql.socket的位置</p>
+<p>第二種方法是改用tcp，將host改為127.0.0.1即可<br><figure class="highlight php"><figcaption><span>config.inc.php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$cfg</span>[<span class="string">'Servers'</span>][<span class="variable">$i</span>][<span class="string">'host'</span>] = <span class="string">'127.0.0.1'</span>;</span><br></pre></td></tr></table></figure></p>
+
                     
-                        <a href="/en/bower/" class="postShorten-excerpt_link link">
-                            Continue reading
-                        </a>
                         
+
+                    
+                    
+                        <p>
+                            <a href="/en/phpMyAdmin-use-socket/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
                     
                 </div>
             
@@ -253,7 +258,6 @@
 </div>
 
 </section>
-
 
 
                 <footer id="footer" class="main-content-wrap">

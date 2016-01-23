@@ -215,6 +215,157 @@
   </entry>
   
   <entry>
+    <title><![CDATA[Redux]]></title>
+    <link href="http://waynelkh.github.io/en/Redux/"/>
+    <id>http://waynelkh.github.io/en/Redux/</id>
+    <published>2015-11-02T18:44:30.000Z</published>
+    <updated>2016-01-23T19:45:51.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="Introduce"><a href="#Introduce" class="headerlink" title="Introduce"></a>Introduce</h2><p><em>Predictable state container for JavaScript apps</em></p>
+<p><em>Just like Flux, but better!</em></p>
+<p>Three concept</p>
+<ul>
+<li>Action</li>
+<li>Reducer</li>
+<li>Store</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 這是一個 reducer，一個有 (state, action) =&gt; state signature 的 pure function。</span><br><span class="line"> * 它描述一個 action 如何把 state 轉換成下一個 state。</span><br><span class="line"> *</span><br><span class="line"> * state 的形狀取決於你：它可以是基本類型、一個陣列、一個物件，</span><br><span class="line"> * 或甚至是一個 Immutable.js 資料結構。唯一重要的部分是你</span><br><span class="line"> * 不應該改變 state 物件，而是當 state 變化時回傳一個新的物件。</span><br><span class="line"> *</span><br><span class="line"> * 在這個範例中，我們使用一個 `switch` 陳述句和字串，不過你可以使用一個 helper，</span><br><span class="line"> * 來遵照一個不同的慣例 (例如 function maps)，如果它對你的專案有意義。</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">counter</span>(<span class="params">state = 0, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'INCREMENT'</span>:</span><br><span class="line">    <span class="keyword">return</span> state + <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'DECREMENT'</span>:</span><br><span class="line">    <span class="keyword">return</span> state - <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立一個 Redux store 來掌管你的應用程式的 state。</span></span><br><span class="line"><span class="comment">// 它的 API 是 &#123; subscribe, dispatch, getState &#125;。</span></span><br><span class="line"><span class="keyword">let</span> store = createStore(counter);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 你可以手動的去訂閱更新，或是使用跟你的 view layer 之間的綁定。</span></span><br><span class="line">store.subscribe(() =&gt;</span><br><span class="line">  <span class="built_in">console</span>.log(store.getState())</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 變更內部 state 的唯一方法是 dispatch 一個 action。</span></span><br><span class="line"><span class="comment">// actions 可以被 serialized、logged 或是儲存並在之後重播。</span></span><br><span class="line">store.dispatch(&#123; type: <span class="string">'INCREMENT'</span> &#125;);</span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line">store.dispatch(&#123; type: <span class="string">'INCREMENT'</span> &#125;);</span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line">store.dispatch(&#123; type: <span class="string">'DECREMENT'</span> &#125;);</span><br><span class="line"><span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<h3 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h3><p>Pure function</p>
+<h4 id="An_action_MUST"><a href="#An_action_MUST" class="headerlink" title="An action MUST"></a>An action MUST</h4><ol>
+<li>be a plain JavaScript object.</li>
+<li>have a <code>type</code> property.</li>
+</ol>
+<h4 id="An_action_MAY"><a href="#An_action_MAY" class="headerlink" title="An action MAY"></a>An action MAY</h4><ol>
+<li>have a <code>error</code> property.    </li>
+<li>have a <code>payload</code> property.</li>
+<li>have a <code>meta</code> property.</li>
+</ol>
+<p><em>An action MUST NOT include properties other than type, payload, and error, and meta.</em></p>
+<p><a href="https://github.com/acdlite/flux-standard-action" target="_blank" rel="external">FSA</a></p>
+<h3 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h3><p><em>Give state and action function, then return new state</em></p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">previousState</span>, action)</span> =&gt; newState</span><br></pre></td></tr></table></figure>
+<h3 id="Store"><a href="#Store" class="headerlink" title="Store"></a>Store</h3><p>Store can dispatch action, getState</p>
+<ul>
+<li>getState()</li>
+<li>dispatch(action)</li>
+<li>subscribe(listener)</li>
+<li>replaceReducer(nextReducer)</li>
+</ul>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
+<li><a href="http://rackt.org/redux/" target="_blank" rel="external">document</a></li>
+<li><a href="http://chentsulin.github.io/redux/" target="_blank" rel="external">zh-tw doc</a></li>
+<li><a href="http://blog.kazaff.me/2015/10/09/[译]Redux中间件深入浅出/" target="_blank" rel="external">Redux中间件深入浅出</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Introduce"><a href="#Introduce" class="headerlink" title="Introduce"></a>Introduce</h2><p><em>Predictable state container for JavaSc]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[data-relation]]></title>
+    <link href="http://waynelkh.github.io/en/data-relation/"/>
+    <id>http://waynelkh.github.io/en/data-relation/</id>
+    <published>2015-10-24T18:06:26.000Z</published>
+    <updated>2016-01-23T19:47:00.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="Data_relation"><a href="#Data_relation" class="headerlink" title="Data relation"></a>Data relation</h3><ol>
+<li>one to one hasOne 一對一</li>
+<li>one to many hasMany 一對多</li>
+<li>many to many belongsToMany 多對多</li>
+<li>遠層一對多關聯</li>
+<li>多型關聯</li>
+<li>多型的多對多關聯</li>
+</ol>
+<p>BelongsTo relations<br>HasOne relations<br>HasMany relations<br>HasManyThrough relations<br>HasAndBelongsToMany relations<br>Polymorphic relations</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="Data_relation"><a href="#Data_relation" class="headerlink" title="Data relation"></a>Data relation</h3><ol>
+<li>one to one hasOne 一對]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Motd]]></title>
+    <link href="http://waynelkh.github.io/en/Motd/"/>
+    <id>http://waynelkh.github.io/en/Motd/</id>
+    <published>2015-04-02T18:27:41.000Z</published>
+    <updated>2016-01-23T19:46:00.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="u4FEE_u6539Arch_linux__u767B_u5165_u756B_u9762__28motd_29"><a href="#u4FEE_u6539Arch_linux__u767B_u5165_u756B_u9762__28motd_29" class="headerlink" title="修改Arch linux 登入畫面 (motd)"></a>修改Arch linux 登入畫面 (<a href="http://en.wikipedia.org/wiki/Motd_%28Unix%29" target="_blank" rel="external">motd</a>)</h2><p>要做的步驟如下</p>
+<a id="more"></a>
+<h3 id="Disable_original_motd__28/etc/motd_29__u539F_u56E0_u662F_u4ED6_u53EA_u80FD_u986F_u793A_u56FA_u5B9A_u6587_u5B57__u5C07motd_u8A3B_u89E3_u6389"><a href="#Disable_original_motd__28/etc/motd_29__u539F_u56E0_u662F_u4ED6_u53EA_u80FD_u986F_u793A_u56FA_u5B9A_u6587_u5B57__u5C07motd_u8A3B_u89E3_u6389" class="headerlink" title="Disable original motd (/etc/motd) 原因是他只能顯示固定文字 將motd註解掉"></a>Disable original motd (/etc/motd) 原因是他只能顯示固定文字 將motd註解掉</h3><ul>
+<li>/etc/ssh/sshd_config PrintMotd no # pam does that</li>
+<li>/etc/pam.d/login or /etc/pam.d/login</li>
+<li>#session    optional   pam_motd.so          motd=/etc/motd</li>
+</ul>
+<h3 id="Write_custom_motd__28/usr/local/bin/dymotd_29__u4E0B_u65B9_u6709_u7BC4_u4F8B"><a href="#Write_custom_motd__28/usr/local/bin/dymotd_29__u4E0B_u65B9_u6709_u7BC4_u4F8B" class="headerlink" title="Write custom motd (/usr/local/bin/dymotd) 下方有範例"></a>Write custom motd (/usr/local/bin/dymotd) 下方有範例</h3><h3 id="Add_custom_motd_to_login_success__28Append_to_/etc/profile_29"><a href="#Add_custom_motd_to_login_success__28Append_to_/etc/profile_29" class="headerlink" title="Add custom motd to login success (Append to /etc/profile)"></a>Add custom motd to login success (Append to /etc/profile)</h3><figure class="highlight bash"><figcaption><span>/etc/profile</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="comment"># Run my Special motd</span></span><br><span class="line">/usr/<span class="built_in">local</span>/bin/dynmotd</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><figcaption><span>/usr/local/bin/dynmotd</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line">PROCCOUNT=`ps -Afl | wc <span class="operator">-l</span>`</span><br><span class="line">PROCCOUNT=`expr <span class="variable">$PROCCOUNT</span> - <span class="number">5</span>`</span><br><span class="line">GROUPZ=`groups`</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$GROUPZ</span> == *irc* ]]; <span class="keyword">then</span></span><br><span class="line">ENDSESSION=`cat /etc/security/limits.conf | grep <span class="string">"@irc"</span> | grep maxlogins | awk &#123;<span class="string">'print $4'</span>&#125;`</span><br><span class="line">PRIVLAGED=<span class="string">"IRC Account"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">ENDSESSION=<span class="string">"Unlimited"</span></span><br><span class="line">PRIVLAGED=<span class="string">"Regular User"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="operator">-e</span> <span class="string">"\033[1;32m _ _</span><br><span class="line">| (_)</span><br><span class="line">| |_ _ __  _   ___  ____      ____ _ _ __ ____</span><br><span class="line">| | | '_ | | |  / /  / / / _\` | '__|_  /</span><br><span class="line">| | | | | | |_| |&gt;  &lt;   V  V / (_| | |   / /</span><br><span class="line">|_|_|_| |_|__,_/_/_  _/_/ __,_|_|  /___| .com</span><br><span class="line"></span><br><span class="line">\033[0;35m+++++++++++++++++: \033[0;37mSystem Data\033[0;35m :+++++++++++++++++++</span><br><span class="line">+  \033[0;37mHostname \033[0;35m= \033[1;32m`hostname`</span><br><span class="line">\033[0;35m+   \033[0;37mAddress \033[0;35m= \033[1;32m204.93.222.167</span><br><span class="line">\033[0;35m+    \033[0;37mKernel \033[0;35m= \033[1;32m`uname -r`</span><br><span class="line">\033[0;35m+    \033[0;37mUptime \033[0;35m= \033[1;32m`uptime | sed 's/.*up ([^,]*), .*/1/'`</span><br><span class="line">\033[0;35m+       \033[0;37mCPU \033[0;35m= \033[1;32m4x Intel(R) Xeon(R) E5620 @ 2.40GHz</span><br><span class="line">\033[0;35m+    \033[0;37mMemory \033[0;35m= \033[1;32m`cat /proc/meminfo | grep MemTotal | awk &#123;'print <span class="variable">$2</span>'&#125;` kB</span><br><span class="line">\033[0;35m++++++++++++++++++: \033[0;37mUser Data\033[0;35m :++++++++++++++++++++</span><br><span class="line">+  \033[0;37mUsername \033[0;35m= \033[1;32m`whoami`</span><br><span class="line">\033[0;35m+ \033[0;37mPrivlages \033[0;35m= \033[1;32m<span class="variable">$PRIVLAGED</span></span><br><span class="line">\033[0;35m+  \033[0;37mSessions \033[0;35m= \033[1;32m`who | grep <span class="variable">$USER</span> | wc -l` of <span class="variable">$ENDSESSION</span> MAX</span><br><span class="line">\033[0;35m+ \033[0;37mProcesses \033[0;35m= \033[1;32m<span class="variable">$PROCCOUNT</span> of `ulimit -u` MAX</span><br><span class="line">\033[0;35m+++++++++++++: \033[0;37mHelpful Information\033[0;35m :+++++++++++++++</span><br><span class="line">+    \033[0;37mvhosts \033[0;35m= \033[1;32mList valid RDNS on IPv6 subnet</span><br><span class="line">\033[0;35m+     \033[0;37mirssi \033[0;35m= \033[1;32mIRC client, -h to use vhosts</span><br><span class="line">\033[0;35m+ \033[0;37mBox Admin \033[0;35m= \033[1;32mLinuxwarz @ EFnet</span><br><span class="line">\033[0;35m+++++++++++: \033[0;31mMaintenance Information\033[0;35m :+++++++++++++</span><br><span class="line">+\033[0;31m `cat /etc/motd-maint`</span><br><span class="line">\033[0;35m+++++++++++++++++++++++++++++++++++++++++++++++++++</span><br><span class="line">"</span></span><br></pre></td></tr></table></figure>
+<p><a href="http://parkersamp.com/2010/10/howto-creating-a-dynamic-motd-in-linux/" target="_blank" rel="external">Reference</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="u4FEE_u6539Arch_linux__u767B_u5165_u756B_u9762__28motd_29"><a href="#u4FEE_u6539Arch_linux__u767B_u5165_u756B_u9762__28motd_29" class="headerlink" title="修改Arch linux 登入畫面 (motd)"></a>修改Arch linux 登入畫面 (<a href="http://en.wikipedia.org/wiki/Motd_%28Unix%29">motd</a>)</h2><p>要做的步驟如下</p>]]>
+    
+    </summary>
+    
+      <category term="Archlinux" scheme="http://waynelkh.github.io/tags/Archlinux/"/>
+    
+      <category term="Server" scheme="http://waynelkh.github.io/categories/Server/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Regular-Expression]]></title>
+    <link href="http://waynelkh.github.io/en/Regular-Expression/"/>
+    <id>http://waynelkh.github.io/en/Regular-Expression/</id>
+    <published>2015-03-30T20:47:06.000Z</published>
+    <updated>2016-01-23T19:46:08.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="Basic_concepts"><a href="#Basic_concepts" class="headerlink" title="Basic concepts"></a>Basic concepts</h3><p><code>|</code> Or<br><code>(ab|cd)</code> Grouping<br><code>?</code> zero or one of the preceding element<br><code>+</code> one or more of the preceding element<br><code>*</code> zero or more of the preceding element<br><code>\</code> Escape ex. <code>\n</code> match Enter <code>\\</code> match <code>\</code>, <code>\(</code> match <code>(</code><br><code>^</code> Starting position (every line start will match)<br><code>$</code> Ending position (every line end will match)</p>
+<h3 id="Advance"><a href="#Advance" class="headerlink" title="Advance"></a>Advance</h3><p>n,m &gt;= 0 and intergers<br><code>{n}</code>  Matches the preceding element <code>equal</code> n<br><code>{n,}</code> Matches the preceding element <code>at least</code> n<br><code>{n,m}</code> Matches the preceding element <code>at least m and not more than n</code> times<br><code>?</code> Modifies the *, +, ? or {M,N}’d regex that comes before to match as <code>few times as possible</code>.<br><code>.</code> Normally matches <code>any character</code> except a newline(\n). <code>(.|\n)</code> for all character</p>
+<h3 id="visualizer_tools"><a href="#visualizer_tools" class="headerlink" title="visualizer tools"></a>visualizer tools</h3><p><a href="http://jex.im/regulex/" target="_blank" rel="external">regulex</a><br><a href="http://regexper.com/" target="_blank" rel="external">regexper</a><br><a href="https://www.debuggex.com/" target="_blank" rel="external">debuggex</a></p>
+<h3 id="CheatSheet"><a href="#CheatSheet" class="headerlink" title="CheatSheet"></a>CheatSheet</h3><p><a href="https://www.debuggex.com/cheatsheet/regex/javascript" target="_blank" rel="external">JavaScript</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="Basic_concepts"><a href="#Basic_concepts" class="headerlink" title="Basic concepts"></a>Basic concepts</h3><p><code>|</code> Or<br><]]>
+    </summary>
+    
+      <category term="Computer Science" scheme="http://waynelkh.github.io/categories/Computer-Science/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[react-style-guide]]></title>
+    <link href="http://waynelkh.github.io/en/react-style-guide/"/>
+    <id>http://waynelkh.github.io/en/react-style-guide/</id>
+    <published>2015-01-27T19:48:36.000Z</published>
+    <updated>2016-01-23T19:46:24.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="react_coding_style_guide"><a href="#react_coding_style_guide" class="headerlink" title="react coding style guide"></a>react coding style guide</h2><h3 id="Method_Organization"><a href="#Method_Organization" class="headerlink" title="Method Organization"></a>Method Organization</h3><a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">React.createClass(&#123;</span><br><span class="line">  displayName : <span class="string">''</span>,</span><br><span class="line">  propTypes: &#123;&#125;,</span><br><span class="line">  mixins : [],</span><br><span class="line">  getInitialState : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">  componentWillMount : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">  componentWillUnmount : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">  _onChange : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">  _onCreate : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">  render : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>設定displayNmae對於debugger很有幫助</li>
+<li>propTypes 也可以算是寫文檔, 預期會有怎樣的props傳入</li>
+<li>自定義的function可以使用_來區分或handleXXX (handleClick, handleOnChange)</li>
+</ul>
+<h3 id="render_HTML"><a href="#render_HTML" class="headerlink" title="render HTML"></a>render HTML</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="keyword">this</span>.state.show &amp;&amp; <span class="string">'This is Shown'</span>&#125;</span><br><span class="line">&#123;<span class="keyword">this</span>.state.on ? ‘On’ : ‘Off’&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>每個<code>{}</code>都會被視為javascript的語法</li>
+<li>如果需要複雜的輸出就先用一個<code>var</code>存入之後再return回<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dinosaurHtml = <span class="string">''</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">this</span>.state.showDinosaurs) &#123;</span><br><span class="line">  dinosaurHtml = (</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="title">section</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">DinosaurTable</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">DinosaurPager</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">section</span>&gt;</span></span><br><span class="line">  )</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">    &#123;dinosaurHtml&#125;</span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">)</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Form"><a href="#Form" class="headerlink" title="Form"></a>Form</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span> value=&#123;<span class="keyword">this</span>.state.newDinosaurName&#125; onChange=&#123;<span class="keyword">this</span>.inputHandler.bind(<span class="keyword">this</span>, <span class="string">'newDinosaurName'</span>)&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Inpput value最好的方式是綁定state然後利用onChange來變更 <a href="http://facebook.github.io/react/docs/forms.html#controlled-components" target="_blank" rel="external">參考</a></li>
+</ul>
+<h3 id="Algin"><a href="#Algin" class="headerlink" title="Algin"></a>Algin</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span></span><br><span class="line">       value=&#123;<span class="keyword">this</span>.state.newDinosaurName&#125;</span><br><span class="line">       onChange=&#123;<span class="keyword">this</span>.inputHandler.bind(<span class="keyword">this</span>, <span class="string">'newDinosaurName'</span>)&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<p><a href="https://reactjsnews.com/react-style-guide-patterns-i-like/" target="_blank" rel="external">reference</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="react_coding_style_guide"><a href="#react_coding_style_guide" class="headerlink" title="react coding style guide"></a>react coding style guide</h2><h3 id="Method_Organization"><a href="#Method_Organization" class="headerlink" title="Method Organization"></a>Method Organization</h3>]]>
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[License]]></title>
     <link href="http://waynelkh.github.io/en/license/"/>
     <id>http://waynelkh.github.io/en/license/</id>
@@ -246,6 +397,86 @@
     </summary>
     
       <category term="other" scheme="http://waynelkh.github.io/tags/other/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Bower]]></title>
+    <link href="http://waynelkh.github.io/en/bower/"/>
+    <id>http://waynelkh.github.io/en/bower/</id>
+    <published>2014-10-10T18:27:42.000Z</published>
+    <updated>2016-01-23T19:46:33.000Z</updated>
+    <content type="html"><![CDATA[<p>###Bower a package manager for the web###<br>前端套件管理工具<br>官方網頁<a href="http://bower.io/" target="_blank" rel="external">Bower</a><br>會發現這個管理工具的原因主要是先看到<a href="http://yeoman.io/" target="_blank" rel="external">Yeoman</a>一個強大的樣板產生器<br>Yeoman是由三個東西組成的yo,grunt,bower, 而今天這篇主要是來介紹bower的用法,其他兩種之後會一一介紹</p>
+<a id="more"></a>
+<p>##安裝 bower###</p>
+<figure class="highlight bash"><figcaption><span>bash</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ brew install nodejs  <span class="comment"># 需要nodejs</span></span><br><span class="line">$ npm install -g bower <span class="comment">#-g 代表全域,將其安裝使用者之下,讓其他資料夾也可以使用</span></span><br></pre></td></tr></table></figure>
+<p>安裝完之後就可以在termial中使用<code>bower</code>這個指令了</p>
+<p>首先我們會利用<code>bower init</code> 來創建一個<code>bower.json</code><br><code>bower.json</code>這個檔案代表將<code>bower</code>執行時他會去讀這個檔案裡面所有的參數然後來進行安裝<br>我們可以裡用<code>init</code>建立或是直接創建這個檔案進行編輯<br>接下來要開始安裝一些套件像是<code>bootstrap</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bower install bootstrap --save    <span class="comment">#加了--saveˋ它會將這筆記入到bower.json當中</span></span><br></pre></td></tr></table></figure></p>
+<p>##bower.json##</p>
+<p>##.bowerrc##<br><a href="http://bower.io/docs/config" target="_blank" rel="external">configuration</a></p>
+<ul>
+<li>analytics</li>
+<li>cwd</li>
+<li>directory</li>
+<li>registry</li>
+<li>shorthand-resolver</li>
+<li>proxy</li>
+<li>https-proxy</li>
+<li>user-agent</li>
+<li>timeout</li>
+<li>strict-ssl</li>
+<li>cs</li>
+<li>color</li>
+<li>storage</li>
+<li>tmp</li>
+<li>interactive</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>###Bower a package manager for the web###<br>前端套件管理工具<br>官方網頁<a href="http://bower.io/">Bower</a><br>會發現這個管理工具的原因主要是先看到<a href="http://yeoman.io/">Yeoman</a>一個強大的樣板產生器<br>Yeoman是由三個東西組成的yo,grunt,bower, 而今天這篇主要是來介紹bower的用法,其他兩種之後會一一介紹</p>]]>
+    
+    </summary>
+    
+      <category term="Tool" scheme="http://waynelkh.github.io/tags/Tool/"/>
+    
+      <category term="Web" scheme="http://waynelkh.github.io/categories/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hexo]]></title>
+    <link href="http://waynelkh.github.io/en/Hexo/"/>
+    <id>http://waynelkh.github.io/en/Hexo/</id>
+    <published>2014-10-06T20:56:10.000Z</published>
+    <updated>2016-01-23T19:46:48.000Z</updated>
+    <content type="html"><![CDATA[<p>為本blog所使用的系統, 為<code>Node.js</code>中的一個擴充套件<br>可以利用hexo生成靜態網頁, 我是將其放在github上<br>之後有空的話就寫篇教學.</p>
+<a id="more"></a>]]></content>
+    <summary type="html">
+    <![CDATA[<p>為本blog所使用的系統, 為<code>Node.js</code>中的一個擴充套件<br>可以利用hexo生成靜態網頁, 我是將其放在github上<br>之後有空的話就寫篇教學.</p>]]>
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[phpMyAdmin use socket]]></title>
+    <link href="http://waynelkh.github.io/en/phpMyAdmin-use-socket/"/>
+    <id>http://waynelkh.github.io/en/phpMyAdmin-use-socket/</id>
+    <published>2014-10-06T20:55:43.000Z</published>
+    <updated>2016-01-23T19:45:38.000Z</updated>
+    <content type="html"><![CDATA[<p>原本安裝好mysql跟phpmyadmin會出現</p>
+<p>#2002 無法登入 mysql 伺服器<br>原因是phpmyadmin預設localhost是用tcp來連結的<br>所以會造成這個錯誤，要解決的辦法有兩種<br>第一種為使用socket來連結<br>再phpMyAdmin/config.inc.php加入這一行，如果沒有就cp一份config.sample.ini.php</p>
+<figure class="highlight php"><figcaption><span>config.inc.php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$cfg</span>[<span class="string">'Servers'</span>][<span class="variable">$i</span>][<span class="string">'socket'</span>] = <span class="string">'/tmp/mysql.sock'</span>;</span><br></pre></td></tr></table></figure>
+<p>還有的設定<code>/etc/php.ini</code><br><figure class="highlight php"><figcaption><span>php.ini</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql.default_socket =<span class="string">"/tmp/mysql.sock"</span></span><br></pre></td></tr></table></figure></p>
+<p>記得<code>/tmp/mysql.sock</code>為mysql.socket的位置</p>
+<p>第二種方法是改用tcp，將host改為127.0.0.1即可<br><figure class="highlight php"><figcaption><span>config.inc.php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$cfg</span>[<span class="string">'Servers'</span>][<span class="variable">$i</span>][<span class="string">'host'</span>] = <span class="string">'127.0.0.1'</span>;</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>原本安裝好mysql跟phpmyadmin會出現</p>
+<p>#2002 無法登入 mysql 伺服器<br>原因是phpmyadmin預設localhost是用tcp來連結的<br>所以會造成這個錯誤，要解決的辦法有兩種<br>第一種為使用socket來連結<br>再p]]>
+    </summary>
+    
+      <category term="mysql" scheme="http://waynelkh.github.io/tags/mysql/"/>
     
   </entry>
   

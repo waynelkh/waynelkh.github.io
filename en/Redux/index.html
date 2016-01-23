@@ -6,44 +6,47 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Infinite Road">
-    <title>Mosh - Infinite Road</title>
+    <title>Redux - Infinite Road</title>
     <meta name="author" content="Wayne Lee">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="#Mobile ShellIf you use  Wi-Fi, cellular, and long-distance network,you mush try mosh!!Mosh is a replacement for SSHUsing encryption UDP
-Feature
-Roaming
-Packet loss
-Local echo
+    <meta name="description" content="IntroducePredictable state container for JavaScript apps
+Just like Flux, but better!
+Three concept
 
-Drawbacks
-Prerequisites">
+Action
+Reducer
+Store
+
+1234567891011121314151617181920212223242526272829303132333435363738394041impor">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Mosh">
-<meta property="og:url" content="http://waynelkh.github.io/en/mosh/index.html">
+<meta property="og:title" content="Redux">
+<meta property="og:url" content="http://waynelkh.github.io/en/Redux/index.html">
 <meta property="og:site_name" content="Infinite Road">
-<meta property="og:description" content="#Mobile ShellIf you use  Wi-Fi, cellular, and long-distance network,you mush try mosh!!Mosh is a replacement for SSHUsing encryption UDP
-Feature
-Roaming
-Packet loss
-Local echo
+<meta property="og:description" content="IntroducePredictable state container for JavaScript apps
+Just like Flux, but better!
+Three concept
 
-Drawbacks
-Prerequisites">
-<meta property="og:updated_time" content="2016-01-18T19:46:08.000Z">
+Action
+Reducer
+Store
+
+1234567891011121314151617181920212223242526272829303132333435363738394041impor">
+<meta property="og:updated_time" content="2016-01-23T19:45:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mosh">
-<meta name="twitter:description" content="#Mobile ShellIf you use  Wi-Fi, cellular, and long-distance network,you mush try mosh!!Mosh is a replacement for SSHUsing encryption UDP
-Feature
-Roaming
-Packet loss
-Local echo
+<meta name="twitter:title" content="Redux">
+<meta name="twitter:description" content="IntroducePredictable state container for JavaScript apps
+Just like Flux, but better!
+Three concept
 
-Drawbacks
-Prerequisites">
+Action
+Reducer
+Store
+
+1234567891011121314151617181920212223242526272829303132333435363738394041impor">
     
     
         
@@ -226,13 +229,13 @@ Prerequisites">
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Mosh
+            Redux
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sat Sep 27 2014 21:10:04 GMT+0800">
+    <time itemprop="datePublished" content="Tue Nov 03 2015 02:44:30 GMT+0800">
 	
-		    Sep 27, 2014
+		    Nov 03, 2015
     	
     </time>
     
@@ -241,21 +244,41 @@ Prerequisites">
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>#<a href="https://mosh.mit.edu/" target="_blank" rel="external">Mobile Shell</a><br>If you use  Wi-Fi, cellular, and long-distance network,<br>you <em>mush</em> try mosh!!<br>Mosh is a replacement for SSH<br>Using encryption UDP</p>
-<h1 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h1><ul>
-<li>Roaming</li>
-<li>Packet loss</li>
-<li>Local echo</li>
+            <h2 id="Introduce"><a href="#Introduce" class="headerlink" title="Introduce"></a>Introduce</h2><p><em>Predictable state container for JavaScript apps</em></p>
+<p><em>Just like Flux, but better!</em></p>
+<p>Three concept</p>
+<ul>
+<li>Action</li>
+<li>Reducer</li>
+<li>Store</li>
 </ul>
-<h1 id="Drawbacks"><a href="#Drawbacks" class="headerlink" title="Drawbacks"></a>Drawbacks</h1><ul>
-<li>Prerequisites to the server</li>
-<li>One port per connection<ul>
-<li>Default choose 60000-61000 port for each connection.</li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 這是一個 reducer，一個有 (state, action) =&gt; state signature 的 pure function。</span><br><span class="line"> * 它描述一個 action 如何把 state 轉換成下一個 state。</span><br><span class="line"> *</span><br><span class="line"> * state 的形狀取決於你：它可以是基本類型、一個陣列、一個物件，</span><br><span class="line"> * 或甚至是一個 Immutable.js 資料結構。唯一重要的部分是你</span><br><span class="line"> * 不應該改變 state 物件，而是當 state 變化時回傳一個新的物件。</span><br><span class="line"> *</span><br><span class="line"> * 在這個範例中，我們使用一個 `switch` 陳述句和字串，不過你可以使用一個 helper，</span><br><span class="line"> * 來遵照一個不同的慣例 (例如 function maps)，如果它對你的專案有意義。</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">counter</span>(<span class="params">state = 0, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'INCREMENT'</span>:</span><br><span class="line">    <span class="keyword">return</span> state + <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'DECREMENT'</span>:</span><br><span class="line">    <span class="keyword">return</span> state - <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立一個 Redux store 來掌管你的應用程式的 state。</span></span><br><span class="line"><span class="comment">// 它的 API 是 &#123; subscribe, dispatch, getState &#125;。</span></span><br><span class="line"><span class="keyword">let</span> store = createStore(counter);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 你可以手動的去訂閱更新，或是使用跟你的 view layer 之間的綁定。</span></span><br><span class="line">store.subscribe(() =&gt;</span><br><span class="line">  <span class="built_in">console</span>.log(store.getState())</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 變更內部 state 的唯一方法是 dispatch 一個 action。</span></span><br><span class="line"><span class="comment">// actions 可以被 serialized、logged 或是儲存並在之後重播。</span></span><br><span class="line">store.dispatch(&#123; type: <span class="string">'INCREMENT'</span> &#125;);</span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line">store.dispatch(&#123; type: <span class="string">'INCREMENT'</span> &#125;);</span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line">store.dispatch(&#123; type: <span class="string">'DECREMENT'</span> &#125;);</span><br><span class="line"><span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<h3 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h3><p>Pure function</p>
+<h4 id="An_action_MUST"><a href="#An_action_MUST" class="headerlink" title="An action MUST"></a>An action MUST</h4><ol>
+<li>be a plain JavaScript object.</li>
+<li>have a <code>type</code> property.</li>
+</ol>
+<h4 id="An_action_MAY"><a href="#An_action_MAY" class="headerlink" title="An action MAY"></a>An action MAY</h4><ol>
+<li>have a <code>error</code> property.    </li>
+<li>have a <code>payload</code> property.</li>
+<li>have a <code>meta</code> property.</li>
+</ol>
+<p><em>An action MUST NOT include properties other than type, payload, and error, and meta.</em></p>
+<p><a href="https://github.com/acdlite/flux-standard-action" target="_blank" rel="external">FSA</a></p>
+<h3 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h3><p><em>Give state and action function, then return new state</em></p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">previousState</span>, action)</span> =&gt; newState</span><br></pre></td></tr></table></figure>
+<h3 id="Store"><a href="#Store" class="headerlink" title="Store"></a>Store</h3><p>Store can dispatch action, getState</p>
+<ul>
+<li>getState()</li>
+<li>dispatch(action)</li>
+<li>subscribe(listener)</li>
+<li>replaceReducer(nextReducer)</li>
 </ul>
-</li>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
+<li><a href="http://rackt.org/redux/" target="_blank" rel="external">document</a></li>
+<li><a href="http://chentsulin.github.io/redux/" target="_blank" rel="external">zh-tw doc</a></li>
+<li><a href="http://blog.kazaff.me/2015/10/09/[译]Redux中间件深入浅出/" target="_blank" rel="external">Redux中间件深入浅出</a></li>
 </ul>
-<p>So when you are mosh to a host in NAT or vm you should assign the port like<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mosh -p <span class="number">1234</span> [ip]</span><br></pre></td></tr></table></figure></p>
-<h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><p><a href="https://mosh.mit.edu/#getting" target="_blank" rel="external">Get Mosh</a></p>
 
             
                 
@@ -270,7 +293,7 @@ Prerequisites">
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/en/phpMyAdmin-use-socket/"  data-tooltip="phpMyAdmin use socket">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/tw/js-unit-test/"  data-tooltip="js-unit-test">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -278,7 +301,7 @@ Prerequisites">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/en/Web-Notes/" data-tooltip="Web-Notes">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/en/data-relation/" data-tooltip="data-relation">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -293,17 +316,17 @@ Prerequisites">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://waynelkh.github.io/en/mosh/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://waynelkh.github.io/en/Redux/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://waynelkh.github.io/en/mosh/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://waynelkh.github.io/en/Redux/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://waynelkh.github.io/en/mosh/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://waynelkh.github.io/en/Redux/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -351,7 +374,7 @@ Prerequisites">
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/en/phpMyAdmin-use-socket/"  data-tooltip="phpMyAdmin use socket">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/tw/js-unit-test/"  data-tooltip="js-unit-test">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -359,7 +382,7 @@ Prerequisites">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/en/Web-Notes/" data-tooltip="Web-Notes">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/en/data-relation/" data-tooltip="data-relation">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -374,17 +397,17 @@ Prerequisites">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://waynelkh.github.io/en/mosh/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://waynelkh.github.io/en/Redux/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://waynelkh.github.io/en/mosh/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://waynelkh.github.io/en/Redux/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://waynelkh.github.io/en/mosh/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://waynelkh.github.io/en/Redux/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -410,17 +433,17 @@ Prerequisites">
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://waynelkh.github.io/en/mosh/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://waynelkh.github.io/en/Redux/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://waynelkh.github.io/en/mosh/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://waynelkh.github.io/en/Redux/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://waynelkh.github.io/en/mosh/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://waynelkh.github.io/en/Redux/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
@@ -465,9 +488,9 @@ Prerequisites">
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'http://waynelkh.github.io/en/mosh/';
+                 this.page.url = 'http://waynelkh.github.io/en/Redux/';
                  
-                    this.page.identifier = 'en/mosh/';
+                    this.page.identifier = 'en/Redux/';
                                   
              };
             (function() {
