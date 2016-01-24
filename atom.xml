@@ -439,6 +439,24 @@
   </entry>
   
   <entry>
+    <title><![CDATA[Codeigniter Datamapper]]></title>
+    <link href="http://waynelkh.github.io/en/Codeigniter-Datamapper/"/>
+    <id>http://waynelkh.github.io/en/Codeigniter-Datamapper/</id>
+    <published>2014-10-15T01:12:55.000Z</published>
+    <updated>2016-01-24T14:26:08.000Z</updated>
+    <content type="html"><![CDATA[<p>##Codeigniter ORM library<br>簡單來說就是將資料庫轉化成物件 (object) 來使用相當方便,而且不用下sql語法<br>但實際上你也是可以用CI的<a href="http://www.codeigniter.org.tw/user_guide/database/active_record.html" target="_blank" rel="external">Active Record</a>來實現一樣的結果,<br>不同的是Datamapper比較不需要在model寫太多code只需要將其設定即可.</p>
+<p>首先是<a href="http://datamapper.wanwizard.eu/pages/installation.html" target="_blank" rel="external">安裝方法</a>直接到官網下載解壓縮覆蓋過去CI就可以了,然後再index.php加入下列<br><figure class="highlight php"><figcaption><span>index.php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* --------------------------------------------------------------------</span><br><span class="line"> * LOAD THE DATAMAPPER BOOTSTRAP FILE</span><br><span class="line"> * --------------------------------------------------------------------</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">require_once</span> APPPATH.<span class="string">'third_party/datamapper/bootstrap.php'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>還有將其加入config/autoload.php中<br><figure class="highlight php"><figcaption><span>autoload.php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$autoload</span>[<span class="string">'libraries'</span>] = <span class="keyword">array</span>(<span class="string">'database'</span>, <span class="string">'datamapper'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>你也有可能會autoload其他library就記得加上去不要cp paste蓋過去了<br>原則上這樣就安裝好了,只要注意到index.php的路徑有沒有require到.</p>
+<p><a href="http://datamapper.wanwizard.eu/" target="_blank" rel="external">Datamapper官方文件</a><br><a href="http://huboo.zzl.org/datamapper/manual/pages/examples.html" target="_blank" rel="external">Datamapper簡體半翻譯</a><br><a href="http://www.codeigniter.org.tw/user_guide/" target="_blank" rel="external">Codeigniter官方中文文件</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>##Codeigniter ORM library<br>簡單來說就是將資料庫轉化成物件 (object) 來使用相當方便,而且不用下sql語法<br>但實際上你也是可以用CI的<a href="http://www.codeigniter.org.tw/user_guid]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Bower]]></title>
     <link href="http://waynelkh.github.io/en/bower/"/>
     <id>http://waynelkh.github.io/en/bower/</id>
@@ -576,51 +594,6 @@
 <ol>
 <li>v]]>
     </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Web-Notes]]></title>
-    <link href="http://waynelkh.github.io/en/Web-Notes/"/>
-    <id>http://waynelkh.github.io/en/Web-Notes/</id>
-    <published>2014-09-27T13:09:00.000Z</published>
-    <updated>2016-01-18T19:46:08.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h3 id="u5FEB_u901F_u6539_u8B8A_u7DB2_u7AD9_u6B0A_u9650"><a href="#u5FEB_u901F_u6539_u8B8A_u7DB2_u7AD9_u6B0A_u9650" class="headerlink" title="快速改變網站權限"></a>快速改變網站權限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ find ./ -type d -print0 | xargs -<span class="number">0</span> chmod <span class="number">755</span> <span class="comment">#將所在目錄下所有目錄改變權限</span></span><br><span class="line">$ find ./ -type f -print0 | xargs -<span class="number">0</span> chmod <span class="number">644</span> <span class="comment">#將所在目錄下所有檔案改變權限</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="Front-end"><a href="#Front-end" class="headerlink" title="Front-end"></a>Front-end</h2><h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm uninstall</span><br><span class="line">npm search</span><br><span class="line">npm ls</span><br><span class="line">npm update</span><br></pre></td></tr></table></figure>
-<p>參數<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g [package name]	<span class="comment">#安裝全域中</span></span><br><span class="line">npm install --save [package name] <span class="comment">#安裝並加入package.json中的dependencies</span></span><br><span class="line">npm install --save-dev [package name] <span class="comment">#同上不同欄位devDependencies</span></span><br><span class="line">npm install --save-optional <span class="comment">#同上不同欄位optionalDependencies</span></span><br></pre></td></tr></table></figure></p>
-<p>將npm寫入設定中,預設會讀目錄下的<code>package.json</code>欓<br>可以使用npm init產生<code>package.json</code>欓</p>
-<h2 id="CI_and_CD"><a href="#CI_and_CD" class="headerlink" title="CI and CD"></a>CI and CD</h2><p>Continuous Integration/Continuous Delivery</p>
-<h2 id="u751F_u6210_u6E2C_u8A66json"><a href="#u751F_u6210_u6E2C_u8A66json" class="headerlink" title="生成測試json"></a>生成測試json</h2><p><a href="http://www.filltext.com/" target="_blank" rel="external">filltext</a><br>使用方法<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://filltext.com/?rows=10&amp;val=&#123;randomNumber&#125;</span><br></pre></td></tr></table></figure></p>
-<p>返回來的json會呈現<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">3</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">9</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">5</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">1</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">0</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">4</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">7</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">0</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">6</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">8</span></span>&#125;]</span><br></pre></td></tr></table></figure></p>
-<p>還有其他很多的選項可以去上面官網看</p>
-<h3 id="u53D6_u4EE3mouse_move_event"><a href="#u53D6_u4EE3mouse_move_event" class="headerlink" title="取代mouse move event"></a>取代mouse move event</h3><p>使用 requestAnimationFrame 增進performance<br><a href="http://msdn.microsoft.com/zh-tw/library/ie/hh920765%28v=vs.85%29.aspx" target="_blank" rel="external">接個連結</a></p>
-<h3 id="HTML5_script_attribe"><a href="#HTML5_script_attribe" class="headerlink" title="HTML5 script attribe"></a>HTML5 script attribe</h3><p>可以使頁面不會再載入js檔時停住<br><code>&lt;script src=&quot;demo.js&quot; &gt;&lt;/script&gt;</code><br><code>&lt;script src=&quot;demo.js&quot; async&gt;&lt;/script&gt;</code></p>
-<h3 id="Web_Project_Tools"><a href="#Web_Project_Tools" class="headerlink" title="Web Project Tools"></a>Web Project Tools</h3><ul>
-<li><a href="http://nightwatchjs.org/" target="_blank" rel="external">Nightwatch</a><ul>
-<li>Browser automated testing done easy. Write efficient and straightforward Javascript End-to-End tests in Node.js which run against a Selenium server.</li>
-</ul>
-</li>
-<li><a href="https://ci.testling.com/" target="_blank" rel="external">ci.testling</a> run your browser tests on every push</li>
-<li><a href="https://travis-ci.org/" target="_blank" rel="external">travis-ci</a></li>
-<li><a href="https://saucelabs.com/" target="_blank" rel="external">saucelabs</a> Automated testing in the cloud for CI.</li>
-<li><a href="https://circleci.com/" target="_blank" rel="external">CircleCI</a> Mobile App Testing for iOS &amp; Android</li>
-<li><a href="https://github.com/Strider-CD/strider" target="_blank" rel="external">Strider-CD</a></li>
-<li><a href="https://codeclimate.com/" target="_blank" rel="external">CodeClimate</a> Merge with Confidence.<br>Automated code review for Ruby, JS, and PHP.</li>
-<li><a href="https://david-dm.org/" target="_blank" rel="external">David</a> Watch your Node.JS dependencies</li>
-<li><a href="https://gemnasium.com/" target="_blank" rel="external">Gemnasium</a> SECURE YOUR PROJECT AND REDUCE TECHNICAL DEBT</li>
-<li><a href="https://www.modern.ie/" target="_blank" rel="external">Modern.ie</a> 看名稱也知道是測試IE相容性的</li>
-</ul>
-<h3 id="Web_server_benchmark_test"><a href="#Web_server_benchmark_test" class="headerlink" title="Web server benchmark test"></a>Web server benchmark test</h3><p>use <code>ab</code> command</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -n <span class="number">50000</span> -c <span class="number">100</span> x.arthurtoday.com/xyz.html</span><br></pre></td></tr></table></figure>
-<p>It is a apache benchmark testing tools<br><a href="http://httpd.apache.org/docs/2.2/programs/ab.html" target="_blank" rel="external">Official</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h3 id="u5FEB_u901F_u6539_u8B8A_u7DB2_u7AD9_u6B0A_u9650"><a href="#u5FEB_u901F_u6539_u8B8A_u7DB2_u7AD9_u6B0A_u9650" class="headerlink" title="快速改變網站權限"></a>快速改變網站權限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ find ./ -type d -print0 | xargs -<span class="number">0</span> chmod <span class="number">755</span> <span class="comment">#將所在目錄下所有目錄改變權限</span></span><br><span class="line">$ find ./ -type f -print0 | xargs -<span class="number">0</span> chmod <span class="number">644</span> <span class="comment">#將所在目錄下所有檔案改變權限</span></span><br></pre></td></tr></table></figure>]]>
-    
-    </summary>
-    
-      <category term="web" scheme="http://waynelkh.github.io/categories/web/"/>
     
   </entry>
   

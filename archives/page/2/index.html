@@ -368,6 +368,52 @@
     </article>
     
     
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/en/Codeigniter-Datamapper/">
+                            Codeigniter Datamapper
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Oct 15 2014 09:12:55 GMT+0800">
+	
+		    Oct 15, 2014
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>##Codeigniter ORM library<br>簡單來說就是將資料庫轉化成物件 (object) 來使用相當方便,而且不用下sql語法<br>但實際上你也是可以用CI的<a href="http://www.codeigniter.org.tw/user_guide/database/active_record.html" target="_blank" rel="external">Active Record</a>來實現一樣的結果,<br>不同的是Datamapper比較不需要在model寫太多code只需要將其設定即可.</p>
+<p>首先是<a href="http://datamapper.wanwizard.eu/pages/installation.html" target="_blank" rel="external">安裝方法</a>直接到官網下載解壓縮覆蓋過去CI就可以了,然後再index.php加入下列<br><figure class="highlight php"><figcaption><span>index.php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* --------------------------------------------------------------------</span><br><span class="line"> * LOAD THE DATAMAPPER BOOTSTRAP FILE</span><br><span class="line"> * --------------------------------------------------------------------</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">require_once</span> APPPATH.<span class="string">'third_party/datamapper/bootstrap.php'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>還有將其加入config/autoload.php中<br><figure class="highlight php"><figcaption><span>autoload.php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$autoload</span>[<span class="string">'libraries'</span>] = <span class="keyword">array</span>(<span class="string">'database'</span>, <span class="string">'datamapper'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>你也有可能會autoload其他library就記得加上去不要cp paste蓋過去了<br>原則上這樣就安裝好了,只要注意到index.php的路徑有沒有require到.</p>
+<p><a href="http://datamapper.wanwizard.eu/" target="_blank" rel="external">Datamapper官方文件</a><br><a href="http://huboo.zzl.org/datamapper/manual/pages/examples.html" target="_blank" rel="external">Datamapper簡體半翻譯</a><br><a href="http://www.codeigniter.org.tw/user_guide/" target="_blank" rel="external">Codeigniter官方中文文件</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/en/Codeigniter-Datamapper/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
     <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             <div class="postShorten-header">
@@ -599,48 +645,6 @@
                                 Comment and share
                             </a>
                         </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/en/Web-Notes/">
-                            Web-Notes
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat Sep 27 2014 21:09:00 GMT+0800">
-	
-		    Sep 27, 2014
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/web/">web</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h3 id="u5FEB_u901F_u6539_u8B8A_u7DB2_u7AD9_u6B0A_u9650"><a href="#u5FEB_u901F_u6539_u8B8A_u7DB2_u7AD9_u6B0A_u9650" class="headerlink" title="快速改變網站權限"></a>快速改變網站權限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ find ./ -type d -print0 | xargs -<span class="number">0</span> chmod <span class="number">755</span> <span class="comment">#將所在目錄下所有目錄改變權限</span></span><br><span class="line">$ find ./ -type f -print0 | xargs -<span class="number">0</span> chmod <span class="number">644</span> <span class="comment">#將所在目錄下所有檔案改變權限</span></span><br></pre></td></tr></table></figure>
-                    
-                        <a href="/en/Web-Notes/" class="postShorten-excerpt_link link">
-                            Continue reading
-                        </a>
-                        
                     
                 </div>
             
