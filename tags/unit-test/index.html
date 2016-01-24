@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Infinite Road">
-    <title>Archives: 2016 - Infinite Road</title>
+    <title>Tag: unit test - Infinite Road</title>
     <meta name="author" content="Wayne Lee">
     
     
@@ -16,7 +16,7 @@
     <meta name="description" content="Note something I had done">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Infinite Road">
-<meta property="og:url" content="http://waynelkh.github.io/archives/2016/index.html">
+<meta property="og:url" content="http://waynelkh.github.io/tags/unit-test/index.html">
 <meta property="og:site_name" content="Infinite Road">
 <meta property="og:description" content="Note something I had done">
 <meta name="twitter:card" content="summary">
@@ -253,186 +253,6 @@
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/en/react-router-auth-flow/">
-                            react-router auth flow
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sun Jan 24 2016 02:50:00 GMT+0800">
-	
-		    Jan 24, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <ol>
-<li><p>先判斷localstorge有無token<br>1.1. 有的話拿著token發一個request去auth認證<br>1.1.1 true的話loading結束開始使用app - <em><br>1.1.2 false導到auth頁面<br>1.2. 沒有的話導到auth頁面 並將頁面存至localstorge已讓成功時重新返回<br>1.2.1. 認證成功 redirect回原頁面並將token存至localstorge - </em><br>1.2.2. 認證失敗繼續認證</p>
-</li>
-<li><p>開始使用app時<br>2.1 call server api時附帶token過去, server與auth認證此token是否有效<br>2.1.1 有效, 進行api操作並返回成功 or api操作fail<br>2.1.2 無效, 因token過期或尚未認證 return unauthorized讓前端判斷導到auth認證</p>
-</li>
-</ol>
-<p>需要驗證的page加上onEnter={authenticate}這個function</p>
-<p><a href="https://github.com/rackt/react-router/tree/master/examples/auth-flow" target="_blank" rel="external">react-router auth example</a></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/en/react-router-auth-flow/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/en/eslint-npm-run/">
-                            npm run eslint error
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Tue Jan 19 2016 04:12:31 GMT+0800">
-	
-		    Jan 19, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>When I use npm run lint script to lint my file, I always get the result below<br><img src="/en/eslint-npm-run/eslint-npm-run-error.png" alt="eslint-npm-run-error.png" title=""><br>How to solve?</p>
-<p>The reason got npm error is eslint will throw error and npm got the error.<br>So you will got npm error<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"lint"</span>: <span class="string">"eslint src; true"</span>,</span><br></pre></td></tr></table></figure></p>
-<p>And it will work!<br>But when you work with CI that will always true, so I think that is not a good way to resolve.</p>
-<p>Sometime I integrate with webpack using eslint loader like<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">preLoaders:[&#123;</span><br><span class="line">test:    /\.jsx?$/,</span><br><span class="line">include: Path.resolve(__dirname, 'src'),</span><br><span class="line">loaders: ['eslint-loader']</span><br><span class="line">&#125;],</span><br></pre></td></tr></table></figure></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/en/eslint-npm-run/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/tw/double-dash/">
-                            double-dash
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat Jan 09 2016 01:48:07 GMT+0800">
-	
-		    Jan 09, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>Today is talking about <code>--</code> in command line.<br>Someone ask <a href="http://unix.stackexchange.com/questions/11376/what-does-double-dash-mean-also-known-as-bare-double-dash" target="_blank" rel="external">what-does-double-dash-mean-also-known-as-bare-double-dash</a></p>
-<p>There is an example.<br>If you want to grep String <code>-v</code> in somefile.<br>You may type <code>grep -v somefile</code>. But, -v is a grep parameter.<br>Mush use <code>grep &#39;\-v&#39; file</code> to escape <code>-</code> symbol.<br>If you know <code>--</code> the symbol mean, you can use <code>grep -- -v file</code> to grep the <code>-v</code> string in file.<br>That mean after <code>--</code> parameters don’t be a parameter!<br>It’s useful when you write a flexiable script.<br>For example, if you use pm2 to start you node application.<br>How to you pass a parameter to script.js? Use <code>--</code> and apend the parameter as follows:<br><code>pm2 start script.js -- -d 1</code></p>
-<p>like use pm2 to excute <code>script.js -d 1</code></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/tw/double-dash/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/tw/arch/">
-                            arch
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Fri Jan 01 2016 00:59:13 GMT+0800">
-	
-		    Jan 01, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>$ grpconv<br>Creates gshadow from group and an optionally existing gshadow.<br>Fix group doesn’t sync with gshadow</p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/tw/arch/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -442,7 +262,6 @@
 </div>
 
 </section>
-
 
 
                 <footer id="footer" class="main-content-wrap">
