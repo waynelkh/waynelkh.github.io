@@ -27,6 +27,8 @@
         
     
     
+        <meta property="og:image" content="http://www.gravatar.com/avatar/5d6b4b28e0e848cf2a49e1b96e3b2aae?s=640"/>
+    
     
     
     
@@ -54,6 +56,8 @@
 
 
     
+        
+    
 
 <header id="header" data-behavior="3">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
@@ -66,6 +70,8 @@
                 href="/#about">
         
         
+            <img class="header-picture" src="http://www.gravatar.com/avatar/5d6b4b28e0e848cf2a49e1b96e3b2aae?s=90"/>
+        
         </a>
     
 </header>
@@ -73,7 +79,16 @@
             <!-- Define author's picture -->
 
 
+    
+
 <nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                    <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/5d6b4b28e0e848cf2a49e1b96e3b2aae?s=110"/>
+            </a>
+            <span class="sidebar-profile-name">Wayne Lee</span>
+        </div>
     
     
         <ul class="sidebar-buttons">
@@ -207,7 +222,7 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/en/Web-Notes/">
+                        <a class="link-unstyled" href="/web/Web-Notes/">
                             Web-Notes
                         </a>
                     
@@ -232,7 +247,7 @@
                 <div class="postShorten-excerpt" itemprop="articleBody">
                     <h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h3 id="u5FEB_u901F_u6539_u8B8A_u7DB2_u7AD9_u6B0A_u9650"><a href="#u5FEB_u901F_u6539_u8B8A_u7DB2_u7AD9_u6B0A_u9650" class="headerlink" title="快速改變網站權限"></a>快速改變網站權限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ find ./ -type d -print0 | xargs -<span class="number">0</span> chmod <span class="number">755</span> <span class="comment">#將所在目錄下所有目錄改變權限</span></span><br><span class="line">$ find ./ -type f -print0 | xargs -<span class="number">0</span> chmod <span class="number">644</span> <span class="comment">#將所在目錄下所有檔案改變權限</span></span><br></pre></td></tr></table></figure>
                     
-                        <a href="/en/Web-Notes/" class="postShorten-excerpt_link link">
+                        <a href="/web/Web-Notes/" class="postShorten-excerpt_link link">
                             Continue reading
                         </a>
                         
@@ -249,7 +264,7 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/en/Start-the-road/">
+                        <a class="link-unstyled" href="/uncategorized/Start-the-road/">
                             Start the road
                         </a>
                     
@@ -325,7 +340,7 @@
                     
                     
                         <p>
-                            <a href="/en/Start-the-road/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/uncategorized/Start-the-road/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
@@ -368,11 +383,15 @@
         
 
 
+    
+
 <div id="about">
     <div id="about-card">
         <div id="about-btn-close">
             <i class="fa fa-remove"></i>
         </div>
+        
+            <img id="about-card-picture" src="http://www.gravatar.com/avatar/5d6b4b28e0e848cf2a49e1b96e3b2aae?s=110"/>
         
             <h4 id="about-card-name">Wayne Lee</h4>
         
@@ -387,6 +406,12 @@
 
             </h5>
         
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Taiwan
+            </h5>
         
     </div>
 </div>

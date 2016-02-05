@@ -1,0 +1,510 @@
+
+<!DOCTYPE html>
+<html lang="en,tw,default">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Infinite Road">
+    <title>Web-Notes - Infinite Road</title>
+    <meta name="author" content="Wayne Lee">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="MISC快速改變網站權限12$ find ./ -type d -print0 | xargs -0 chmod 755 #將所在目錄下所有目錄改變權限$ find ./ -type f -print0 | xargs -0 chmod 644 #將所在目錄下所有檔案改變權限">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Web-Notes">
+<meta property="og:url" content="http://waynelkh.github.io/web/Web-Notes/index.html">
+<meta property="og:site_name" content="Infinite Road">
+<meta property="og:description" content="MISC快速改變網站權限12$ find ./ -type d -print0 | xargs -0 chmod 755 #將所在目錄下所有目錄改變權限$ find ./ -type f -print0 | xargs -0 chmod 644 #將所在目錄下所有檔案改變權限">
+<meta property="og:updated_time" content="2016-01-18T19:46:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web-Notes">
+<meta name="twitter:description" content="MISC快速改變網站權限12$ find ./ -type d -print0 | xargs -0 chmod 755 #將所在目錄下所有目錄改變權限$ find ./ -type f -print0 | xargs -0 chmod 644 #將所在目錄下所有檔案改變權限">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="http://www.gravatar.com/avatar/5d6b4b28e0e848cf2a49e1b96e3b2aae?s=640"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-ejlztp1tasruqfvoz6xmgqng0anzae8ox7cqjj5yibieqgcmhe9fwxfae6zj.min.css" type="text/css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-59476577-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">Infinite Road</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="/#about">
+        
+        
+            <img class="header-picture" src="http://www.gravatar.com/avatar/5d6b4b28e0e848cf2a49e1b96e3b2aae?s=90"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                    <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/5d6b4b28e0e848cf2a49e1b96e3b2aae?s=110"/>
+            </a>
+            <span class="sidebar-profile-name">Wayne Lee</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">Home</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">Categories</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archives</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">Search</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">About</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/waynelkh" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="mailto:waynelkh0@gmail.com" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
+                    <span class="sidebar-button-desc">Mail</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/atom.xml"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Web-Notes
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Sat Sep 27 2014 21:09:00 GMT+0800">
+	
+		    Sep 27, 2014
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/web/">web</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h3 id="u5FEB_u901F_u6539_u8B8A_u7DB2_u7AD9_u6B0A_u9650"><a href="#u5FEB_u901F_u6539_u8B8A_u7DB2_u7AD9_u6B0A_u9650" class="headerlink" title="快速改變網站權限"></a>快速改變網站權限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ find ./ -type d -print0 | xargs -<span class="number">0</span> chmod <span class="number">755</span> <span class="comment">#將所在目錄下所有目錄改變權限</span></span><br><span class="line">$ find ./ -type f -print0 | xargs -<span class="number">0</span> chmod <span class="number">644</span> <span class="comment">#將所在目錄下所有檔案改變權限</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="Front-end"><a href="#Front-end" class="headerlink" title="Front-end"></a>Front-end</h2><h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm uninstall</span><br><span class="line">npm search</span><br><span class="line">npm ls</span><br><span class="line">npm update</span><br></pre></td></tr></table></figure>
+<p>參數<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g [package name]	<span class="comment">#安裝全域中</span></span><br><span class="line">npm install --save [package name] <span class="comment">#安裝並加入package.json中的dependencies</span></span><br><span class="line">npm install --save-dev [package name] <span class="comment">#同上不同欄位devDependencies</span></span><br><span class="line">npm install --save-optional <span class="comment">#同上不同欄位optionalDependencies</span></span><br></pre></td></tr></table></figure></p>
+<p>將npm寫入設定中,預設會讀目錄下的<code>package.json</code>欓<br>可以使用npm init產生<code>package.json</code>欓</p>
+<h2 id="CI_and_CD"><a href="#CI_and_CD" class="headerlink" title="CI and CD"></a>CI and CD</h2><p>Continuous Integration/Continuous Delivery</p>
+<h2 id="u751F_u6210_u6E2C_u8A66json"><a href="#u751F_u6210_u6E2C_u8A66json" class="headerlink" title="生成測試json"></a>生成測試json</h2><p><a href="http://www.filltext.com/" target="_blank" rel="external">filltext</a><br>使用方法<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://filltext.com/?rows=10&amp;val=&#123;randomNumber&#125;</span><br></pre></td></tr></table></figure></p>
+<p>返回來的json會呈現<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">3</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">9</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">5</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">1</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">0</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">4</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">7</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">0</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">6</span></span>&#125;,&#123;"<span class="attribute">val</span>":<span class="value"><span class="number">8</span></span>&#125;]</span><br></pre></td></tr></table></figure></p>
+<p>還有其他很多的選項可以去上面官網看</p>
+<h3 id="u53D6_u4EE3mouse_move_event"><a href="#u53D6_u4EE3mouse_move_event" class="headerlink" title="取代mouse move event"></a>取代mouse move event</h3><p>使用 requestAnimationFrame 增進performance<br><a href="http://msdn.microsoft.com/zh-tw/library/ie/hh920765%28v=vs.85%29.aspx" target="_blank" rel="external">接個連結</a></p>
+<h3 id="HTML5_script_attribe"><a href="#HTML5_script_attribe" class="headerlink" title="HTML5 script attribe"></a>HTML5 script attribe</h3><p>可以使頁面不會再載入js檔時停住<br><code>&lt;script src=&quot;demo.js&quot; &gt;&lt;/script&gt;</code><br><code>&lt;script src=&quot;demo.js&quot; async&gt;&lt;/script&gt;</code></p>
+<h3 id="Web_Project_Tools"><a href="#Web_Project_Tools" class="headerlink" title="Web Project Tools"></a>Web Project Tools</h3><ul>
+<li><a href="http://nightwatchjs.org/" target="_blank" rel="external">Nightwatch</a><ul>
+<li>Browser automated testing done easy. Write efficient and straightforward Javascript End-to-End tests in Node.js which run against a Selenium server.</li>
+</ul>
+</li>
+<li><a href="https://ci.testling.com/" target="_blank" rel="external">ci.testling</a> run your browser tests on every push</li>
+<li><a href="https://travis-ci.org/" target="_blank" rel="external">travis-ci</a></li>
+<li><a href="https://saucelabs.com/" target="_blank" rel="external">saucelabs</a> Automated testing in the cloud for CI.</li>
+<li><a href="https://circleci.com/" target="_blank" rel="external">CircleCI</a> Mobile App Testing for iOS &amp; Android</li>
+<li><a href="https://github.com/Strider-CD/strider" target="_blank" rel="external">Strider-CD</a></li>
+<li><a href="https://codeclimate.com/" target="_blank" rel="external">CodeClimate</a> Merge with Confidence.<br>Automated code review for Ruby, JS, and PHP.</li>
+<li><a href="https://david-dm.org/" target="_blank" rel="external">David</a> Watch your Node.JS dependencies</li>
+<li><a href="https://gemnasium.com/" target="_blank" rel="external">Gemnasium</a> SECURE YOUR PROJECT AND REDUCE TECHNICAL DEBT</li>
+<li><a href="https://www.modern.ie/" target="_blank" rel="external">Modern.ie</a> 看名稱也知道是測試IE相容性的</li>
+</ul>
+<h3 id="Web_server_benchmark_test"><a href="#Web_server_benchmark_test" class="headerlink" title="Web server benchmark test"></a>Web server benchmark test</h3><p>use <code>ab</code> command</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -n <span class="number">50000</span> -c <span class="number">100</span> x.arthurtoday.com/xyz.html</span><br></pre></td></tr></table></figure>
+<p>It is a apache benchmark testing tools<br><a href="http://httpd.apache.org/docs/2.2/programs/ab.html" target="_blank" rel="external">Official</a></p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/uncategorized/Vim/"  data-tooltip="Vim">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/uncategorized/Start-the-road/" data-tooltip="Start the road">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://waynelkh.github.io/web/Web-Notes/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://waynelkh.github.io/web/Web-Notes/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://waynelkh.github.io/web/Web-Notes/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2016 Wayne Lee. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/uncategorized/Vim/"  data-tooltip="Vim">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/uncategorized/Start-the-road/" data-tooltip="Start the road">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://waynelkh.github.io/web/Web-Notes/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://waynelkh.github.io/web/Web-Notes/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://waynelkh.github.io/web/Web-Notes/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://waynelkh.github.io/web/Web-Notes/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://waynelkh.github.io/web/Web-Notes/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://waynelkh.github.io/web/Web-Notes/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        
+
+
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="http://www.gravatar.com/avatar/5d6b4b28e0e848cf2a49e1b96e3b2aae?s=110"/>
+        
+            <h4 id="about-card-name">Wayne Lee</h4>
+        
+            <h5 id="about-card-bio"><p>Full-stack developer</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Master Student</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Taiwan
+            </h5>
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/scrip-gfmrkxcl0qohe3cfdgxhzvc0yrceqta8i4iix0txvn8q4o2adlqd5n0jmkvt.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'http://waynelkh.github.io/web/Web-Notes/';
+                 
+                    this.page.identifier = 'web/Web-Notes/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'waynelkh';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+
+
+
+</html>

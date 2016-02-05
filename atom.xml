@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[test react component]]></title>
-    <link href="http://waynelkh.github.io/en/test-react-component/"/>
-    <id>http://waynelkh.github.io/en/test-react-component/</id>
+    <link href="http://waynelkh.github.io/frontend/test-react-component/"/>
+    <id>http://waynelkh.github.io/frontend/test-react-component/</id>
     <published>2016-01-24T14:18:00.000Z</published>
     <updated>2016-01-24T14:23:30.000Z</updated>
     <content type="html"><![CDATA[<h3 id="How_to_test_react_component"><a href="#How_to_test_react_component" class="headerlink" title="How to test react component"></a>How to test react component</h3><p>use <a href="https://facebook.github.io/react/docs/test-utils.html#shallow-rendering" target="_blank" rel="external">shallow rendering</a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;createRenderer&#125; <span class="keyword">from</span> <span class="string">'react-addons-test-utils'</span>;</span><br><span class="line"> </span><br><span class="line">describe(<span class="string">'Button'</span>, () =&gt; &#123;</span><br><span class="line">  it(<span class="string">'works'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> renderer = createRenderer();</span><br><span class="line">    renderer.render(<span class="xml"><span class="tag">&lt;<span class="title">Button</span> <span class="attribute">name</span>=<span class="value">"John"</span> /&gt;</span>)</span>;</span><br><span class="line">    <span class="keyword">let</span> actualElement = renderer.getRenderOutput();</span><br><span class="line">    <span class="keyword">let</span> expectedElement = <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">Label</span> <span class="attribute">name</span>=<span class="value">"John"</span> /&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>;</span></span><br><span class="line">    expect(actualElement).toEqual(expectedElement);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// We can define a shallow rendering function</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">shallow</span>(<span class="params">component</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> renderer = createRenderer();</span><br><span class="line">  renderer.render(component);</span><br><span class="line">  <span class="keyword">return</span> renderer.getRenderOutput();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// to test a click function</span></span><br><span class="line">it(<span class="string">'clicks'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> renderer = createRenderer();</span><br><span class="line">    <span class="keyword">let</span> hasClicked = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">let</span> click = () =&gt; hasClicked = <span class="literal">true</span>;</span><br><span class="line">    renderer.render(<span class="xml"><span class="tag">&lt;<span class="title">Button</span> <span class="attribute">name</span>=<span class="value">"John"</span> <span class="attribute">onClick</span>=<span class="value">&#123;click&#125;</span> /&gt;</span>)</span>;</span><br><span class="line">    renderer.getRenderOutput().props.onClick();</span><br><span class="line">    expect(hasClicked).toBe(<span class="literal">true</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
@@ -43,8 +43,8 @@
   
   <entry>
     <title><![CDATA[react-router auth flow]]></title>
-    <link href="http://waynelkh.github.io/en/react-router-auth-flow/"/>
-    <id>http://waynelkh.github.io/en/react-router-auth-flow/</id>
+    <link href="http://waynelkh.github.io/uncategorized/react-router-auth-flow/"/>
+    <id>http://waynelkh.github.io/uncategorized/react-router-auth-flow/</id>
     <published>2016-01-23T18:50:00.000Z</published>
     <updated>2016-01-23T20:33:01.000Z</updated>
     <content type="html"><![CDATA[<ol>
@@ -69,25 +69,25 @@
   
   <entry>
     <title><![CDATA[npm run eslint error]]></title>
-    <link href="http://waynelkh.github.io/en/eslint-npm-run/"/>
-    <id>http://waynelkh.github.io/en/eslint-npm-run/</id>
+    <link href="http://waynelkh.github.io/uncategorized/eslint-npm-run/"/>
+    <id>http://waynelkh.github.io/uncategorized/eslint-npm-run/</id>
     <published>2016-01-18T20:12:31.000Z</published>
     <updated>2016-01-18T20:20:47.000Z</updated>
-    <content type="html"><![CDATA[<p>When I use npm run lint script to lint my file, I always get the result below<br><img src="/en/eslint-npm-run/eslint-npm-run-error.png" alt="eslint-npm-run-error.png" title=""><br>How to solve?</p>
+    <content type="html"><![CDATA[<p>When I use npm run lint script to lint my file, I always get the result below<br><img src="/uncategorized/eslint-npm-run/eslint-npm-run-error.png" alt="eslint-npm-run-error.png" title=""><br>How to solve?</p>
 <p>The reason got npm error is eslint will throw error and npm got the error.<br>So you will got npm error<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"lint"</span>: <span class="string">"eslint src; true"</span>,</span><br></pre></td></tr></table></figure></p>
 <p>And it will work!<br>But when you work with CI that will always true, so I think that is not a good way to resolve.</p>
 <p>Sometime I integrate with webpack using eslint loader like<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">preLoaders:[&#123;</span><br><span class="line">test:    /\.jsx?$/,</span><br><span class="line">include: Path.resolve(__dirname, 'src'),</span><br><span class="line">loaders: ['eslint-loader']</span><br><span class="line">&#125;],</span><br></pre></td></tr></table></figure></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>When I use npm run lint script to lint my file, I always get the result below<br><img src="/en/eslint-npm-run/eslint-npm-run-error.png" a]]>
+    <![CDATA[<p>When I use npm run lint script to lint my file, I always get the result below<br><img src="/uncategorized/eslint-npm-run/eslint-npm-run-e]]>
     </summary>
     
   </entry>
   
   <entry>
     <title><![CDATA[double-dash]]></title>
-    <link href="http://waynelkh.github.io/tw/double-dash/"/>
-    <id>http://waynelkh.github.io/tw/double-dash/</id>
+    <link href="http://waynelkh.github.io/uncategorized/double-dash/"/>
+    <id>http://waynelkh.github.io/uncategorized/double-dash/</id>
     <published>2016-01-08T17:48:07.000Z</published>
     <updated>2016-01-18T19:46:08.000Z</updated>
     <content type="html"><![CDATA[<p>Today is talking about <code>--</code> in command line.<br>Someone ask <a href="http://unix.stackexchange.com/questions/11376/what-does-double-dash-mean-also-known-as-bare-double-dash" target="_blank" rel="external">what-does-double-dash-mean-also-known-as-bare-double-dash</a></p>
@@ -104,8 +104,8 @@
   
   <entry>
     <title><![CDATA[arch]]></title>
-    <link href="http://waynelkh.github.io/tw/arch/"/>
-    <id>http://waynelkh.github.io/tw/arch/</id>
+    <link href="http://waynelkh.github.io/uncategorized/arch/"/>
+    <id>http://waynelkh.github.io/uncategorized/arch/</id>
     <published>2015-12-31T16:59:13.000Z</published>
     <updated>2016-01-18T19:46:08.000Z</updated>
     <content type="html"><![CDATA[<p>$ grpconv<br>Creates gshadow from group and an optionally existing gshadow.<br>Fix group doesn’t sync with gshadow</p>
@@ -121,8 +121,8 @@
   
   <entry>
     <title><![CDATA[docker]]></title>
-    <link href="http://waynelkh.github.io/tw/docker/"/>
-    <id>http://waynelkh.github.io/tw/docker/</id>
+    <link href="http://waynelkh.github.io/devops/docker/"/>
+    <id>http://waynelkh.github.io/devops/docker/</id>
     <published>2015-12-21T17:28:00.000Z</published>
     <updated>2016-01-23T20:06:20.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Getting_Started_with_Consul_in_Docker"><a href="#Getting_Started_with_Consul_in_Docker" class="headerlink" title="Getting Started with Consul in Docker"></a>Getting Started with Consul in Docker</h2><p>Every node need<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ PUBLIC_IP=<span class="string">"<span class="variable">$(ifconfig eno16777984| grep inet | grep netmask | awk '&#123; print $2&#125;')</span>"</span></span><br></pre></td></tr></table></figure></p>
@@ -170,8 +170,8 @@
   
   <entry>
     <title><![CDATA[archlinux-network]]></title>
-    <link href="http://waynelkh.github.io/tw/archlinux-network/"/>
-    <id>http://waynelkh.github.io/tw/archlinux-network/</id>
+    <link href="http://waynelkh.github.io/uncategorized/archlinux-network/"/>
+    <id>http://waynelkh.github.io/uncategorized/archlinux-network/</id>
     <published>2015-12-15T15:48:07.000Z</published>
     <updated>2016-01-18T19:46:08.000Z</updated>
     <content type="html"><![CDATA[<p>設定在vmware workstation裡面的arch網路<br>兩張網卡</p>
@@ -220,8 +220,8 @@
   
   <entry>
     <title><![CDATA[js unit test]]></title>
-    <link href="http://waynelkh.github.io/tw/js-unit-test/"/>
-    <id>http://waynelkh.github.io/tw/js-unit-test/</id>
+    <link href="http://waynelkh.github.io/uncategorized/js-unit-test/"/>
+    <id>http://waynelkh.github.io/uncategorized/js-unit-test/</id>
     <published>2015-11-30T22:39:08.000Z</published>
     <updated>2016-01-24T14:20:38.000Z</updated>
     <content type="html"><![CDATA[<h3 id="Mocha_2C_Chai_2C_Sinon"><a href="#Mocha_2C_Chai_2C_Sinon" class="headerlink" title="Mocha, Chai, Sinon"></a>Mocha, Chai, Sinon</h3><ul>
@@ -254,8 +254,8 @@
   
   <entry>
     <title><![CDATA[Redux]]></title>
-    <link href="http://waynelkh.github.io/en/Redux/"/>
-    <id>http://waynelkh.github.io/en/Redux/</id>
+    <link href="http://waynelkh.github.io/uncategorized/Redux/"/>
+    <id>http://waynelkh.github.io/uncategorized/Redux/</id>
     <published>2015-11-02T18:44:30.000Z</published>
     <updated>2016-01-23T19:45:51.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Introduce"><a href="#Introduce" class="headerlink" title="Introduce"></a>Introduce</h2><p><em>Predictable state container for JavaScript apps</em></p>
@@ -302,8 +302,8 @@
   
   <entry>
     <title><![CDATA[data-relation]]></title>
-    <link href="http://waynelkh.github.io/en/data-relation/"/>
-    <id>http://waynelkh.github.io/en/data-relation/</id>
+    <link href="http://waynelkh.github.io/uncategorized/data-relation/"/>
+    <id>http://waynelkh.github.io/uncategorized/data-relation/</id>
     <published>2015-10-24T18:06:26.000Z</published>
     <updated>2016-01-23T19:47:00.000Z</updated>
     <content type="html"><![CDATA[<h3 id="Data_relation"><a href="#Data_relation" class="headerlink" title="Data relation"></a>Data relation</h3><ol>
@@ -325,8 +325,8 @@
   
   <entry>
     <title><![CDATA[Motd]]></title>
-    <link href="http://waynelkh.github.io/en/Motd/"/>
-    <id>http://waynelkh.github.io/en/Motd/</id>
+    <link href="http://waynelkh.github.io/Server/Motd/"/>
+    <id>http://waynelkh.github.io/Server/Motd/</id>
     <published>2015-04-02T18:27:41.000Z</published>
     <updated>2016-01-23T19:46:00.000Z</updated>
     <content type="html"><![CDATA[<h2 id="u4FEE_u6539Arch_linux__u767B_u5165_u756B_u9762__28motd_29"><a href="#u4FEE_u6539Arch_linux__u767B_u5165_u756B_u9762__28motd_29" class="headerlink" title="修改Arch linux 登入畫面 (motd)"></a>修改Arch linux 登入畫面 (<a href="http://en.wikipedia.org/wiki/Motd_%28Unix%29" target="_blank" rel="external">motd</a>)</h2><p>要做的步驟如下</p>
@@ -353,8 +353,8 @@
   
   <entry>
     <title><![CDATA[Regular-Expression]]></title>
-    <link href="http://waynelkh.github.io/en/Regular-Expression/"/>
-    <id>http://waynelkh.github.io/en/Regular-Expression/</id>
+    <link href="http://waynelkh.github.io/Computer-Science/Regular-Expression/"/>
+    <id>http://waynelkh.github.io/Computer-Science/Regular-Expression/</id>
     <published>2015-03-30T20:47:06.000Z</published>
     <updated>2016-01-23T19:46:08.000Z</updated>
     <content type="html"><![CDATA[<h3 id="Basic_concepts"><a href="#Basic_concepts" class="headerlink" title="Basic concepts"></a>Basic concepts</h3><p><code>|</code> Or<br><code>(ab|cd)</code> Grouping<br><code>?</code> zero or one of the preceding element<br><code>+</code> one or more of the preceding element<br><code>*</code> zero or more of the preceding element<br><code>\</code> Escape ex. <code>\n</code> match Enter <code>\\</code> match <code>\</code>, <code>\(</code> match <code>(</code><br><code>^</code> Starting position (every line start will match)<br><code>$</code> Ending position (every line end will match)</p>
@@ -372,8 +372,8 @@
   
   <entry>
     <title><![CDATA[react-style-guide]]></title>
-    <link href="http://waynelkh.github.io/en/react-style-guide/"/>
-    <id>http://waynelkh.github.io/en/react-style-guide/</id>
+    <link href="http://waynelkh.github.io/uncategorized/react-style-guide/"/>
+    <id>http://waynelkh.github.io/uncategorized/react-style-guide/</id>
     <published>2015-01-27T19:48:36.000Z</published>
     <updated>2016-01-23T19:46:24.000Z</updated>
     <content type="html"><![CDATA[<h2 id="react_coding_style_guide"><a href="#react_coding_style_guide" class="headerlink" title="react coding style guide"></a>react coding style guide</h2><h3 id="Method_Organization"><a href="#Method_Organization" class="headerlink" title="Method Organization"></a>Method Organization</h3><a id="more"></a>
@@ -405,8 +405,8 @@
   
   <entry>
     <title><![CDATA[License]]></title>
-    <link href="http://waynelkh.github.io/en/license/"/>
-    <id>http://waynelkh.github.io/en/license/</id>
+    <link href="http://waynelkh.github.io/uncategorized/license/"/>
+    <id>http://waynelkh.github.io/uncategorized/license/</id>
     <published>2014-12-16T08:53:00.000Z</published>
     <updated>2016-01-18T19:46:08.000Z</updated>
     <content type="html"><![CDATA[<h3 id="MIT_u3001BSD_u3001ASF_u3001GPL_u3001LGPL"><a href="#MIT_u3001BSD_u3001ASF_u3001GPL_u3001LGPL" class="headerlink" title="MIT、BSD、ASF、GPL、LGPL"></a>MIT、BSD、ASF、GPL、LGPL</h3><a id="more"></a>
@@ -440,8 +440,8 @@
   
   <entry>
     <title><![CDATA[Codeigniter Datamapper]]></title>
-    <link href="http://waynelkh.github.io/en/Codeigniter-Datamapper/"/>
-    <id>http://waynelkh.github.io/en/Codeigniter-Datamapper/</id>
+    <link href="http://waynelkh.github.io/uncategorized/Codeigniter-Datamapper/"/>
+    <id>http://waynelkh.github.io/uncategorized/Codeigniter-Datamapper/</id>
     <published>2014-10-15T01:12:55.000Z</published>
     <updated>2016-01-24T14:26:08.000Z</updated>
     <content type="html"><![CDATA[<p>##Codeigniter ORM library<br>簡單來說就是將資料庫轉化成物件 (object) 來使用相當方便,而且不用下sql語法<br>但實際上你也是可以用CI的<a href="http://www.codeigniter.org.tw/user_guide/database/active_record.html" target="_blank" rel="external">Active Record</a>來實現一樣的結果,<br>不同的是Datamapper比較不需要在model寫太多code只需要將其設定即可.</p>
@@ -458,8 +458,8 @@
   
   <entry>
     <title><![CDATA[Bower]]></title>
-    <link href="http://waynelkh.github.io/en/bower/"/>
-    <id>http://waynelkh.github.io/en/bower/</id>
+    <link href="http://waynelkh.github.io/Web/bower/"/>
+    <id>http://waynelkh.github.io/Web/bower/</id>
     <published>2014-10-10T18:27:42.000Z</published>
     <updated>2016-01-23T19:46:33.000Z</updated>
     <content type="html"><![CDATA[<p>###Bower a package manager for the web###<br>前端套件管理工具<br>官方網頁<a href="http://bower.io/" target="_blank" rel="external">Bower</a><br>會發現這個管理工具的原因主要是先看到<a href="http://yeoman.io/" target="_blank" rel="external">Yeoman</a>一個強大的樣板產生器<br>Yeoman是由三個東西組成的yo,grunt,bower, 而今天這篇主要是來介紹bower的用法,其他兩種之後會一一介紹</p>
@@ -501,8 +501,8 @@
   
   <entry>
     <title><![CDATA[Hexo]]></title>
-    <link href="http://waynelkh.github.io/en/Hexo/"/>
-    <id>http://waynelkh.github.io/en/Hexo/</id>
+    <link href="http://waynelkh.github.io/uncategorized/Hexo/"/>
+    <id>http://waynelkh.github.io/uncategorized/Hexo/</id>
     <published>2014-10-06T20:56:10.000Z</published>
     <updated>2016-01-23T19:46:48.000Z</updated>
     <content type="html"><![CDATA[<p>為本blog所使用的系統, 為<code>Node.js</code>中的一個擴充套件<br>可以利用hexo生成靜態網頁, 我是將其放在github上<br>之後有空的話就寫篇教學.</p>
@@ -516,8 +516,8 @@
   
   <entry>
     <title><![CDATA[phpMyAdmin use socket]]></title>
-    <link href="http://waynelkh.github.io/en/phpMyAdmin-use-socket/"/>
-    <id>http://waynelkh.github.io/en/phpMyAdmin-use-socket/</id>
+    <link href="http://waynelkh.github.io/uncategorized/phpMyAdmin-use-socket/"/>
+    <id>http://waynelkh.github.io/uncategorized/phpMyAdmin-use-socket/</id>
     <published>2014-10-06T20:55:43.000Z</published>
     <updated>2016-01-23T19:45:38.000Z</updated>
     <content type="html"><![CDATA[<p>原本安裝好mysql跟phpmyadmin會出現</p>
@@ -538,8 +538,8 @@
   
   <entry>
     <title><![CDATA[Mosh]]></title>
-    <link href="http://waynelkh.github.io/en/mosh/"/>
-    <id>http://waynelkh.github.io/en/mosh/</id>
+    <link href="http://waynelkh.github.io/uncategorized/mosh/"/>
+    <id>http://waynelkh.github.io/uncategorized/mosh/</id>
     <published>2014-09-27T13:10:04.000Z</published>
     <updated>2016-01-18T19:46:08.000Z</updated>
     <content type="html"><![CDATA[<p>#<a href="https://mosh.mit.edu/" target="_blank" rel="external">Mobile Shell</a><br>If you use  Wi-Fi, cellular, and long-distance network,<br>you <em>mush</em> try mosh!!<br>Mosh is a replacement for SSH<br>Using encryption UDP</p>
@@ -566,8 +566,8 @@
   
   <entry>
     <title><![CDATA[Vim]]></title>
-    <link href="http://waynelkh.github.io/en/Vim/"/>
-    <id>http://waynelkh.github.io/en/Vim/</id>
+    <link href="http://waynelkh.github.io/uncategorized/Vim/"/>
+    <id>http://waynelkh.github.io/uncategorized/Vim/</id>
     <published>2014-09-27T13:09:00.000Z</published>
     <updated>2016-01-18T19:46:08.000Z</updated>
     <content type="html"><![CDATA[<p>###使用方式###<br>待補…</p>
