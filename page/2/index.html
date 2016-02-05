@@ -217,6 +217,56 @@
 <section class="postShorten-group main-content-wrap">
     
     
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/uncategorized/data-relation/">
+                            data-relation
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sun Oct 25 2015 02:06:26 GMT+0800">
+	
+		    Oct 25, 2015
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="Data_relation"><a href="#Data_relation" class="headerlink" title="Data relation"></a>Data relation</h3><ol>
+<li>one to one hasOne 一對一</li>
+<li>one to many hasMany 一對多</li>
+<li>many to many belongsToMany 多對多</li>
+<li>遠層一對多關聯</li>
+<li>多型關聯</li>
+<li>多型的多對多關聯</li>
+</ol>
+<p>BelongsTo relations<br>HasOne relations<br>HasMany relations<br>HasManyThrough relations<br>HasAndBelongsToMany relations<br>Polymorphic relations</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/uncategorized/data-relation/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
     <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             <div class="postShorten-header">
@@ -598,64 +648,6 @@
                     
                         <p>
                             <a href="/uncategorized/mosh/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/uncategorized/Vim/">
-                            Vim
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat Sep 27 2014 21:09:00 GMT+0800">
-	
-		    Sep 27, 2014
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>###使用方式###<br>待補…</p>
-<h4 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h4><p>Search what you select</p>
-<ol>
-<li>visual mode select word or sentance (v + hjklew.. and y for yank)</li>
-<li><code>/</code></li>
-<li><code>^r</code></li>
-<li><code>&quot;</code><br>Done </li>
-</ol>
-<p>text object: w,s,p,t<br>moions: a,i,t,f,F<br>command: d,c,y,v</p>
-<p>Combine: diw, ciw etc…</p>
-<p>查詢所有key map<br>vim原生<code>:help index</code><br>查詢pluginmap<code>:verbose map</code> <code>:verbose map!</code><br>:help map-listing<br>:help :map-verbose<br>:help :verbose<br>:help :verbose-cmd<br>:help map-which-keys</p>
-<p>###vimrc###<br>也就是vim的設定檔嘿嘿</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set undolevels=100&#10;set ruler&#10;set autoread&#10;set cursorline&#10;set number&#10;set numberwidth=3&#10;set nobomb&#10;set clipboard+=unnamed&#10;set splitright&#10;set splitbelow&#10;set scrolloff=5&#10;set showtabline=2&#10;set synmaxcol=128&#10;set viminfo=&#34;&#34;&#10;filetype plugin on&#10;syntax on&#10;set hlsearch&#10;set incsearch&#10;set ignorecase&#10;set nobackup&#10;set noswapfile&#10;set nowritebackup&#10;set expandtab&#10;set softtabstop=2&#10;set shiftwidth=2&#10;set tabstop=2&#10;set visualbell&#10;set noerrorbells&#10;set t_vb=&#10;set tm=500&#10;set encoding=utf-8&#10;scriptencoding utf-8&#10;set wildignore+=*.o,*.obj,*.pyc&#10;set wildignore+=*.png,*.jpg,*.gif,*.ico&#10;set wildignore+=*.swf,*.fla&#10;set wildignore+=*.mp3,*.mp4,*.avi,*.mkv&#10;autocmd BufWritePre * :%s/s\s\s+$//e</span><br></pre></td></tr></table></figure>
-<p>###Vundle###<br>Vundle為vim的套件管理器<br>安裝方法為<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim</span><br></pre></td></tr></table></figure></p>
-<p>然後再.vimrc中加入<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set nocompatible              &#34; be iMproved, required&#10;filetype off                  &#34; required&#10;&#34;set the runtime path to include Vundle and initialize&#10;set rtp+=~/.vim/bundle/Vundle.vim&#10;call vundle#begin()&#10;&#10;Plugin &#39;gmarik/Vundle.vim&#39;&#10;&#10;call vundle#end()            &#34; required&#10;filetype plugin indent on    &#34; required</span><br></pre></td></tr></table></figure></p>
-<p>然後再vim中可輸入<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:BundleList</span><br></pre></td></tr></table></figure></p>
-<p>查看你目前安裝的套件<br>還有更多Vundle的指令可以在~/.vim/bundle/Vundle.vim/doc/tags中找到</p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/uncategorized/Vim/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
