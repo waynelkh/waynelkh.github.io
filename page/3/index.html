@@ -217,40 +217,54 @@
 <section class="postShorten-group main-content-wrap">
     
     
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/web/Web-Notes/">
-                            Web-Notes
+                        <a class="link-unstyled" href="/uncategorized/mosh/">
+                            Mosh
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat Sep 27 2014 21:09:00 GMT+0800">
+    <time itemprop="datePublished" content="Sat Sep 27 2014 21:10:04 GMT+0800">
 	
 		    Sep 27, 2014
     	
     </time>
     
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/web/">web</a>
-
-
-    
 </div>
             </div>
             
             
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h3 id="快速改變網站權限"><a href="#快速改變網站權限" class="headerlink" title="快速改變網站權限"></a>快速改變網站權限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ find ./ -type d -print0 | xargs -<span class="number">0</span> chmod <span class="number">755</span> <span class="comment">#將所在目錄下所有目錄改變權限</span></span><br><span class="line">$ find ./ -type f -print0 | xargs -<span class="number">0</span> chmod <span class="number">644</span> <span class="comment">#將所在目錄下所有檔案改變權限</span></span><br></pre></td></tr></table></figure>
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>#<a href="https://mosh.mit.edu/" target="_blank" rel="external">Mobile Shell</a><br>If you use  Wi-Fi, cellular, and long-distance network,<br>you <em>mush</em> try mosh!!<br>Mosh is a replacement for SSH<br>Using encryption UDP</p>
+<h1 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h1><ul>
+<li>Roaming</li>
+<li>Packet loss</li>
+<li>Local echo</li>
+</ul>
+<h1 id="Drawbacks"><a href="#Drawbacks" class="headerlink" title="Drawbacks"></a>Drawbacks</h1><ul>
+<li>Prerequisites to the server</li>
+<li>One port per connection<ul>
+<li>Default choose 60000-61000 port for each connection.</li>
+</ul>
+</li>
+</ul>
+<p>So when you are mosh to a host in NAT or vm you should assign the port like<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mosh -p <span class="number">1234</span> [ip]</span><br></pre></td></tr></table></figure></p>
+<h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><p><a href="https://mosh.mit.edu/#getting" target="_blank" rel="external">Get Mosh</a></p>
+
                     
-                        <a href="/web/Web-Notes/" class="postShorten-excerpt_link link">
-                            Continue reading
-                        </a>
                         
+
+                    
+                    
+                        <p>
+                            <a href="/uncategorized/mosh/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
                     
                 </div>
             
@@ -309,6 +323,48 @@
                                 Comment and share
                             </a>
                         </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/web/Web-Notes/">
+                            Web-Notes
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sat Sep 27 2014 21:09:00 GMT+0800">
+	
+		    Sep 27, 2014
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/web/">web</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h3 id="快速改變網站權限"><a href="#快速改變網站權限" class="headerlink" title="快速改變網站權限"></a>快速改變網站權限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ find ./ -type d -print0 | xargs -<span class="number">0</span> chmod <span class="number">755</span> <span class="comment">#將所在目錄下所有目錄改變權限</span></span><br><span class="line">$ find ./ -type f -print0 | xargs -<span class="number">0</span> chmod <span class="number">644</span> <span class="comment">#將所在目錄下所有檔案改變權限</span></span><br></pre></td></tr></table></figure>
+                    
+                        <a href="/web/Web-Notes/" class="postShorten-excerpt_link link">
+                            Continue reading
+                        </a>
+                        
                     
                 </div>
             
