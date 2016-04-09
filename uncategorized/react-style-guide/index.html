@@ -28,13 +28,13 @@
         
     
     
-        <meta property="og:image" content="http://www.gravatar.com/avatar/5d6b4b28e0e848cf2a49e1b96e3b2aae?s=640"/>
+        <meta property="og:image" content="https://www.gravatar.com/avatar/5d6b4b28e0e848cf2a49e1b96e3b2aae?s=640"/>
     
     
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-ejlztp1tasruqfvoz6xmgqng0anzae8ox7cqjj5yibieqgcmhe9fwxfae6zj.min.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/style-ejlztp1tasruqfvoz6xmgqng0anzae8ox7cqjj5yibieqgcmhe9fwxfae6zj.min.css">
     <!--STYLES END-->
     
     <script type="text/javascript">
@@ -68,10 +68,10 @@
     
         
             <a  class="header-right-picture "
-                href="/#about">
+                href="#about">
         
         
-            <img class="header-picture" src="http://www.gravatar.com/avatar/5d6b4b28e0e848cf2a49e1b96e3b2aae?s=90"/>
+            <img class="header-picture" src="https://www.gravatar.com/avatar/5d6b4b28e0e848cf2a49e1b96e3b2aae?s=90"/>
         
         </a>
     
@@ -86,7 +86,7 @@
     
         <div class="sidebar-profile">
             <a href="/#about">
-                    <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/5d6b4b28e0e848cf2a49e1b96e3b2aae?s=110"/>
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/5d6b4b28e0e848cf2a49e1b96e3b2aae?s=110"/>
             </a>
             <span class="sidebar-profile-name">Wayne Lee</span>
         </div>
@@ -145,7 +145,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link st-search-show-outputs"
-                         href="/#search"
+                         href="#search"
                         
                     >
                 
@@ -157,7 +157,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/#about"
+                         href="#about"
                         
                     >
                 
@@ -245,7 +245,7 @@
 <h3 id="render-HTML"><a href="#render-HTML" class="headerlink" title="render HTML"></a>render HTML</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="keyword">this</span>.state.show &amp;&amp; <span class="string">'This is Shown'</span>&#125;</span><br><span class="line">&#123;<span class="keyword">this</span>.state.on ? ‘On’ : ‘Off’&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>每個<code>{}</code>都會被視為javascript的語法</li>
-<li>如果需要複雜的輸出就先用一個<code>var</code>存入之後再return回<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dinosaurHtml = <span class="string">''</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">this</span>.state.showDinosaurs) &#123;</span><br><span class="line">  dinosaurHtml = (</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="title">section</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">DinosaurTable</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">DinosaurPager</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">section</span>&gt;</span></span><br><span class="line">  )</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">    &#123;dinosaurHtml&#125;</span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">)</span>;</span><br></pre></td></tr></table></figure>
+<li>如果需要複雜的輸出就先用一個<code>var</code>存入之後再return回<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dinosaurHtml = <span class="string">''</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">this</span>.state.showDinosaurs) &#123;</span><br><span class="line">  dinosaurHtml = (</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">DinosaurTable</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">DinosaurPager</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">    &#123;dinosaurHtml&#125;</span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="Form"><a href="#Form" class="headerlink" title="Form"></a>Form</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span> value=&#123;<span class="keyword">this</span>.state.newDinosaurName&#125; onChange=&#123;<span class="keyword">this</span>.inputHandler.bind(<span class="keyword">this</span>, <span class="string">'newDinosaurName'</span>)&#125; /&gt;</span><br></pre></td></tr></table></figure>
@@ -438,7 +438,7 @@
             <i class="fa fa-remove"></i>
         </div>
         
-            <img id="about-card-picture" src="http://www.gravatar.com/avatar/5d6b4b28e0e848cf2a49e1b96e3b2aae?s=110"/>
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/5d6b4b28e0e848cf2a49e1b96e3b2aae?s=110"/>
         
             <h4 id="about-card-name">Wayne Lee</h4>
         
@@ -467,7 +467,7 @@
 <div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/assets/js/scrip-gfmrkxcl0qohe3cfdgxhzvc0yrceqta8i4iix0txvn8q4o2adlqd5n0jmkvt.min.js" type="text/javascript"></script>
+<script src="/assets/js/scrip-gfmrkxcl0qohe3cfdgxhzvc0yrceqta8i4iix0txvn8q4o2adlqd5n0jmkvt.min.js"></script>
 <!--SCRIPTS END-->
 
     
