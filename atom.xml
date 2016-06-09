@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://waynelkh.github.io/"/>
-  <updated>2016-02-05T23:40:55.000Z</updated>
+  <updated>2016-06-09T17:24:28.000Z</updated>
   <id>http://waynelkh.github.io/</id>
   
   <author>
@@ -16,30 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>css-flex</title>
-    <link href="http://waynelkh.github.io/uncategorized/css-flex/"/>
-    <id>http://waynelkh.github.io/uncategorized/css-flex/</id>
-    <published>2016-02-05T23:22:32.000Z</published>
-    <updated>2016-02-05T23:40:55.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;Start-use-css-flex&quot;&gt;&lt;a href=&quot;#Start-use-css-flex&quot; class=&quot;headerlink&quot; title=&quot;Start use css flex&quot;&gt;&lt;/a&gt;Start use css flex&lt;/h3&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod&lt;br&gt;tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At&lt;br&gt;vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,&lt;br&gt;no sea takimata sanctus est Lorem ipsum dolor sit amet.&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Start-use-css-flex&quot;&gt;&lt;a href=&quot;#Start-use-css-flex&quot; class=&quot;headerlink&quot; title=&quot;Start use css flex&quot;&gt;&lt;/a&gt;Start use css flex&lt;/h3&gt;&lt;p&gt;Lorem 
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Start the road</title>
     <link href="http://waynelkh.github.io/other/Start-the-road/"/>
     <id>http://waynelkh.github.io/other/Start-the-road/</id>
     <published>2014-09-24T16:41:00.000Z</published>
-    <updated>2016-06-09T17:24:24.000Z</updated>
+    <updated>2016-06-09T17:24:28.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;Roadmap&quot;&gt;&lt;a href=&quot;#Roadmap&quot; class=&quot;headerlink&quot; title=&quot;Roadmap&quot;&gt;&lt;/a&gt;Roadmap&lt;/h2&gt;&lt;p&gt;I want to start write some notes on this page. If I am industrious, I will write in English. But my English is not well, wish you forgive me.&lt;/p&gt;
 &lt;ul&gt;
