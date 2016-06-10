@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Infinite Road">
-    <title>all-archives - Infinite Road</title>
+    <title>Tag: vim - Infinite Road</title>
     <meta name="author" content="Wayne Lee">
     
     
@@ -15,13 +15,12 @@
     
     <meta name="description" content="Note something I had done">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="all-archives">
-<meta property="og:url" content="http://waynelkh.github.io/all-archives/index.html">
+<meta property="og:title" content="Infinite Road">
+<meta property="og:url" content="http://waynelkh.github.io/tags/vim/index.html">
 <meta property="og:site_name" content="Infinite Road">
 <meta property="og:description" content="Note something I had done">
-<meta property="og:updated_time" content="2016-01-18T20:36:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="all-archives">
+<meta name="twitter:title" content="Infinite Road">
 <meta name="twitter:description" content="Note something I had done">
     
     
@@ -214,68 +213,82 @@
                         hasCoverMetaIn
                         ">
                 
-<div id="archives" class="main-content-wrap">
-    <form id="filter-form" action="#">
-        <input name="date" type="text" class="form-control input--xlarge" placeholder="Search date (YYYY/MM/DD)" autofocus="autofocus">
-    </form>
-    <h5 class="archive-result text-color-base text-xlarge"
-        data-message-zero="no post found"
-        data-message-one="1 post found"
-        data-message-other="{n} posts found"></h5>
-    <section class="boxes">
+    
+
+<section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/Tool/vim/">
+                            vim
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sat Sep 27 2014 21:09:00 GMT+0800">
+	
+		    Sep 27, 2014
+    	
+    </time>
+    
+        <span>in </span>
         
-            
-            
-            
-                
-                
-                <div class="archive archive-year box" data-date="2014">
-                    <h4 class="archive-title">
-                        <a class="link-unstyled" href="/archives/2014">2014</a>
-                    </h4>
-            
-            
-                
-                <ul class="archive-posts archive-month" data-date="201409">
-                    <h5 class="archive-title">
-                        <a class="link-unstyled" href="/archives/2014/09">September</a>
-                    </h5>
-                
-            
-            <li class="archive-post archive-day" data-date="20140927">
-                <a class="archive-post-title" href="/Tool/oh-my-zsh/">oh-my-zsh</a>
-                <span class="archive-post-date"> - sep 27, 2014</span>
-            </li>
-        
-            
-            
-            
-            
-            <li class="archive-post archive-day" data-date="20140927">
-                <a class="archive-post-title" href="/Tool/vim/">vim</a>
-                <span class="archive-post-date"> - sep 27, 2014</span>
-            </li>
-        
-            
-            
-            
-            
-            <li class="archive-post archive-day" data-date="20140927">
-                <a class="archive-post-title" href="/Tool/irssi/">Irssi</a>
-                <span class="archive-post-date"> - sep 27, 2014</span>
-            </li>
-        
-            
-            
-            
-            
-            <li class="archive-post archive-day" data-date="20140925">
-                <a class="archive-post-title" href="/other/Start-the-road/">Start the road</a>
-                <span class="archive-post-date"> - sep 25, 2014</span>
-            </li>
-        
-    </section>
+    <a class="category-link" href="/categories/Tool/">Tool</a>
+
+
+    
 </div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="Default-Usage"><a href="#Default-Usage" class="headerlink" title="Default Usage"></a>Default Usage</h3><p>There is lots of tutorial on the Internet.<br>You can google or use the <code>$ vimtutor</code> to learn how to use basic.<br><a href="http://www.openvim.com/" target="_blank" rel="external">http://www.openvim.com/</a><br><a href="http://vim-adventures.com/" target="_blank" rel="external">http://vim-adventures.com/</a></p>
+<h4 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h4><p>Search what you select</p>
+<ol>
+<li>visual mode select word or sentance (v + hjklew.. and y for yank)</li>
+<li><code>/</code></li>
+<li><code>^r</code></li>
+<li><code>&quot;</code><br>Done</li>
+</ol>
+<p>text object: w,s,p,t<br>motions: a,i,t,f,F<br>command: d,c,y,v</p>
+<p>Combine: diw, ciw etc…</p>
+<p>查詢所有key map<br>vim原生<code>:help index</code><br>查詢pluginmap<code>:verbose map</code> <code>:verbose map!</code><br>:help map-listing<br>:help :map-verbose<br>:help :verbose<br>:help :verbose-cmd<br>:help map-which-keys</p>
+<h3 id="vimrc"><a href="#vimrc" class="headerlink" title="vimrc"></a>vimrc</h3><p>The configuration of vim<br>Here is my vim configuration on the github.<br>Basic configuration: <a href="https://github.com/waynelkh/waynelkhrc/blob/linux/.vimrc" target="_blank" rel="external">vimrc</a><br>Plugin configuration: <a href="https://github.com/waynelkh/waynelkhrc/blob/linux/.vimrc.bundles" target="_blank" rel="external">vimrc.bundle</a><br><img src="/Tool/vim/screenshot.png" alt="screenshot.png" title=""></p>
+<h3 id="Vundle"><a href="#Vundle" class="headerlink" title="Vundle"></a><a href="https://github.com/VundleVim/Vundle.vim" target="_blank" rel="external">Vundle</a></h3><p>Vundle is a Vim plugin manager.</p>
+<p>Installation<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim</span><br></pre></td></tr></table></figure></p>
+<p>Add in .vimrc<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set nocompatible              &#34; be iMproved, required&#10;filetype off                  &#34; required&#10;&#34;set the runtime path to include Vundle and initialize&#10;set rtp+=~/.vim/bundle/Vundle.vim&#10;call vundle#begin()&#10;&#10;Plugin &#39;gmarik/Vundle.vim&#39;&#10;&#10;call vundle#end()            &#34; required&#10;filetype plugin indent on    &#34; required</span><br></pre></td></tr></table></figure></p>
+<p>And reopen vim, try the command <code>:BundleList</code> to check the plugin you install now<br>Other command<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ BundleInstall</span><br><span class="line">$ BundleSearch</span><br><span class="line">$ BundleList</span><br><span class="line">$ BundleUpdate</span><br><span class="line">$ BundleClean</span><br><span class="line">$ BundleDocs</span><br></pre></td></tr></table></figure></p>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/Tool/vim/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">page 1 of 1</li>
+    </ul>
+</div>
+
+</section>
+
 
                 <footer id="footer" class="main-content-wrap">
     <span class="copyrights">
