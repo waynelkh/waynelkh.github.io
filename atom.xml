@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://waynelkh.github.io/"/>
-  <updated>2016-06-10T09:06:30.000Z</updated>
+  <updated>2016-06-10T12:14:51.000Z</updated>
   <id>http://waynelkh.github.io/</id>
   
   <author>
@@ -17,26 +17,10 @@
   
   <entry>
     <title>oh-my-zsh</title>
-    <link href="http://waynelkh.github.io/uncategorized/oh-my-zsh/"/>
-    <id>http://waynelkh.github.io/uncategorized/oh-my-zsh/</id>
-    <published>2016-06-10T09:06:30.000Z</published>
-    <updated>2016-06-10T09:06:30.000Z</updated>
-    
-    <content type="html"></content>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>oh-my-zsh</title>
     <link href="http://waynelkh.github.io/Tool/oh-my-zsh/"/>
     <id>http://waynelkh.github.io/Tool/oh-my-zsh/</id>
     <published>2014-09-27T13:09:36.000Z</published>
-    <updated>2016-06-10T10:13:53.000Z</updated>
+    <updated>2016-06-10T12:14:51.000Z</updated>
     
     <content type="html">&lt;p&gt;I use zsh for my default shell.&lt;br&gt;And oh-my-zsh for enhance zsh&lt;br&gt;&lt;a href=&quot;https://github.com/waynelkh/waynelkhrc/blob/linux/.zshrc&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;my zshrc&lt;/a&gt;&lt;br&gt;Installation&lt;br&gt;Make sure you there is zsh on your machine.&lt;br&gt;If you want to change zsh to default shell, just type &lt;code&gt;$ chsh -s /bin/zsh&lt;/code&gt;.&lt;br&gt;There are possible zsh path. Or you can &lt;code&gt;$ where zsh&lt;/code&gt; to find the path&lt;br&gt;&lt;figure class=&quot;highlight gradle&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;regexp&quot;&gt;/bin/&lt;/span&gt;zsh&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;regexp&quot;&gt;/usr/&lt;/span&gt;local&lt;span class=&quot;regexp&quot;&gt;/bin/&lt;/span&gt;zsh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;oh-my-zsh&lt;/a&gt;&lt;br&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh&amp;#10;$ cp ~/.zshrc ~/.zshrc.orig&amp;#10;$ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -67,7 +51,7 @@
     <link href="http://waynelkh.github.io/Tool/vim/"/>
     <id>http://waynelkh.github.io/Tool/vim/</id>
     <published>2014-09-27T13:09:00.000Z</published>
-    <updated>2016-06-10T11:13:30.000Z</updated>
+    <updated>2016-06-10T11:14:48.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;Default-Usage&quot;&gt;&lt;a href=&quot;#Default-Usage&quot; class=&quot;headerlink&quot; title=&quot;Default Usage&quot;&gt;&lt;/a&gt;Default Usage&lt;/h3&gt;&lt;p&gt;There is lots of tutorial on the Internet.&lt;br&gt;You can google or use the &lt;code&gt;$ vimtutor&lt;/code&gt; to learn how to use basic.&lt;br&gt;&lt;a href=&quot;http://www.openvim.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.openvim.com/&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://vim-adventures.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://vim-adventures.com/&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&quot;Tips&quot;&gt;&lt;a href=&quot;#Tips&quot; class=&quot;headerlink&quot; title=&quot;Tips&quot;&gt;&lt;/a&gt;Tips&lt;/h4&gt;&lt;span class=&quot;highlight-text blue&quot;&gt;Search what you select&lt;/span&gt;
