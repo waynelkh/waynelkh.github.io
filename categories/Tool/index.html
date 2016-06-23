@@ -274,69 +274,6 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/tool/vim/">
-                            vim
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat Sep 27 2014 21:09:00 GMT+0800">
-	
-		    Sep 27, 2014
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/tool/">tool</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="Default-Usage"><a href="#Default-Usage" class="headerlink" title="Default Usage"></a>Default Usage</h3><p>There is lots of tutorial on the Internet.<br>You can google or use the <code>$ vimtutor</code> to learn how to use basic.<br><a href="http://www.openvim.com/" target="_blank" rel="external">http://www.openvim.com/</a><br><a href="http://vim-adventures.com/" target="_blank" rel="external">http://vim-adventures.com/</a></p>
-<h4 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h4><span class="highlight-text blue">Search what you select</span>
-<ol>
-<li>visual mode select word or sentance (v + hjklew.. and y for yank)</li>
-<li><code>/</code></li>
-<li><code>^r</code></li>
-<li><code>&quot;</code><br>Done</li>
-</ol>
-<p>text object: w,s,p,t<br>motions: a,i,t,f,F<br>command: d,c,y,v</p>
-<p>Combine: diw, ciw etc…</p>
-<p>查詢所有key map<br>vim原生<code>:help index</code><br>查詢pluginmap<code>:verbose map</code> <code>:verbose map!</code><br>:help map-listing<br>:help :map-verbose<br>:help :verbose<br>:help :verbose-cmd<br>:help map-which-keys</p>
-<h3 id="vimrc"><a href="#vimrc" class="headerlink" title="vimrc"></a>vimrc</h3><p>The configuration of vim<br>Here is my vim configuration on the github.<br>Basic configuration: <a href="https://github.com/waynelkh/waynelkhrc/blob/linux/.vimrc" target="_blank" rel="external">vimrc</a><br>Plugin configuration: <a href="https://github.com/waynelkh/waynelkhrc/blob/linux/.vimrc.bundles" target="_blank" rel="external">vimrc.bundle</a><br><div class="figure " style="width:;"><a class="fancybox" href="/tool/vim/screenshot.png" title="My vim screenshot" data-fancybox-group=""><img class="fig-img" src="/tool/vim/screenshot.png" alt="My vim screenshot"></a><span class="caption">My vim screenshot</span></div><div style="clear:both;"></div></p>
-<h3 id="Vundle"><a href="#Vundle" class="headerlink" title="Vundle"></a><a href="https://github.com/VundleVim/Vundle.vim" target="_blank" rel="external">Vundle</a></h3><p>Vundle is a Vim plugin manager.</p>
-<p>Installation<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim</span><br></pre></td></tr></table></figure></p>
-<p>Add in .vimrc</p>
-<figure class="highlight bash"><figcaption><span>.vimrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> nocompatible              <span class="string">" be iMproved, required</span><br><span class="line">filetype off                  "</span> required</span><br><span class="line"><span class="string">"set the runtime path to include Vundle and initialize</span><br><span class="line">set rtp+=~/.vim/bundle/Vundle.vim</span><br><span class="line">call vundle#begin()</span><br><span class="line"></span><br><span class="line">Plugin 'gmarik/Vundle.vim'</span><br><span class="line"></span><br><span class="line">call vundle#end()            "</span> required</span><br><span class="line">filetype plugin indent on    <span class="string">" required</span></span><br></pre></td></tr></table></figure>
-<p>And reopen vim, try the command <code>:BundleList</code> to check the plugin you install now<br>Other command<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ BundleInstall</span><br><span class="line">$ BundleSearch</span><br><span class="line">$ BundleList</span><br><span class="line">$ BundleUpdate</span><br><span class="line">$ BundleClean</span><br><span class="line">$ BundleDocs</span><br></pre></td></tr></table></figure></p>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/tool/vim/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
                         <a class="link-unstyled" href="/tool/irssi/">
                             Irssi
                         </a>
